@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "trabajo": "Work",
+    "servicios": "Services",
+    "productos": "Products",
+    "contacto": "Contact"
+  },
+  "estado": {
+    "produccion": "in production",
+    "desarrollo": "in development",
+    "entregado": "delivered"
+  },
+  "comun": {
+    "verCaso": "Read the case",
+    "abrirEnVivo": "Open live",
+    "codigo": "Code",
+    "arranqueLento": "The free server sleeps: it may take about a minute to open.",
+    "archivo": "Archive",
+    "cambiarTema": "Switch theme",
+    "cambiarIdioma": "Switch language",
+    "saltarContenido": "Skip to content",
+    "volverTrabajo": "Back to work",
+    "siguiente": "Next",
+    "anterior": "Previous",
+    "escribeme": "Email me",
+    "disponible": "available for work",
+    "stack": "Built with"
+  },
+  "home": {
+    "titulo": "I build systems where the business rule is the hard problem.",
+    "entrada1": "What breaks a system is rarely the technology. It's the rule nobody wrote down in full: what happens when the review day falls on a public holiday, what an hour worked at three in the morning on a Sunday is worth, what happens when two people book the same slot at the same time.",
+    "entrada2": "That's the work. The systems below are in production with real users, and each one keeps a record of why it's built the way it is.",
+    "seleccion": "Selected work",
+    "verTodo": "See all six cases",
+    "caminosTitulo": "What do you need?",
+    "camino1Titulo": "Someone for your team",
+    "camino1Texto": "Full-stack development, with independent judgement and decisions I can argue for. Available for full-time roles.",
+    "camino2Titulo": "Custom software",
+    "camino2Texto": "A system that solves one concrete problem in your business, built to last and documented so somebody else can pick it up.",
+    "camino3Titulo": "A system that already exists",
+    "camino3Texto": "Software that's already built and running, rented monthly. Today: booking for barbershops."
+  },
+  "trabajo": {
+    "titulo": "Work",
+    "entrada": "Six systems, each with its problem, its hard decision, and the trail to verify it. Everything else is further down.",
+    "archivoEntrada": "Smaller projects, delivered proposals and things still under construction. No long case, but here they are."
+  },
+  "servicios": {
+    "titulo": "Custom software",
+    "entrada": "I build systems for businesses that already understand their problem and need someone to solve it properly.",
+    "comoTitulo": "How I work",
+    "queNoTitulo": "What I don't do"
+  },
+  "productos": {
+    "titulo": "Systems for rent",
+    "entrada": "Software that already exists, already works and already has people using it. Rented monthly, with no development in between.",
+    "verDemo": "See the demo"
+  },
+  "contacto": {
+    "titulo": "Let's talk",
+    "entrada": "Email is fastest. I reply within one business day.",
+    "queIncluir": "If it's about a project, it helps to tell me what problem you want solved and by when. You don't need to know how it gets solved — that's my part."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "trabajo": "Trabajo",
+    "servicios": "Servicios",
+    "productos": "Productos",
+    "contacto": "Contacto"
+  },
+  "estado": {
+    "produccion": "en producción",
+    "desarrollo": "en desarrollo",
+    "entregado": "entregado"
+  },
+  "comun": {
+    "verCaso": "Ver el caso",
+    "abrirEnVivo": "Abrir en vivo",
+    "codigo": "Código",
+    "arranqueLento": "El servidor gratuito duerme: puede tardar cerca de un minuto en abrir.",
+    "archivo": "Archivo",
+    "cambiarTema": "Cambiar tema",
+    "cambiarIdioma": "Cambiar idioma",
+    "saltarContenido": "Saltar al contenido",
+    "volverTrabajo": "Volver al trabajo",
+    "siguiente": "Siguiente",
+    "anterior": "Anterior",
+    "escribeme": "Escríbeme",
+    "disponible": "disponible para trabajar",
+    "stack": "Con qué está hecho"
+  },
+  "home": {
+    "titulo": "Construyo sistemas donde la regla de negocio es el problema difícil.",
+    "entrada1": "Lo que rompe un sistema rara vez es la tecnología. Es la regla que nadie escribió completa: qué pasa cuando el día de revisión cae festivo, cuánto vale una hora trabajada a las tres de la mañana de un domingo, qué ocurre cuando dos personas reservan el mismo turno al mismo tiempo.",
+    "entrada2": "Trabajo en eso. Los sistemas de abajo están en producción, con gente usándolos, y cada uno guarda por qué está construido así.",
+    "seleccion": "Trabajo seleccionado",
+    "verTodo": "Ver los seis casos",
+    "caminosTitulo": "¿Qué necesitas?",
+    "camino1Titulo": "Alguien para tu equipo",
+    "camino1Texto": "Desarrollo fullstack, con criterio propio y decisiones argumentadas. Disponible para posiciones de tiempo completo.",
+    "camino2Titulo": "Software a medida",
+    "camino2Texto": "Un sistema que resuelva un problema concreto de tu negocio, construido para durar y documentado para que otro pueda seguirlo.",
+    "camino3Titulo": "Un sistema ya listo",
+    "camino3Texto": "Software que ya existe y funciona, en alquiler mensual. Hoy: agendamiento para barberías."
+  },
+  "trabajo": {
+    "titulo": "Trabajo",
+    "entrada": "Seis sistemas con su problema, su decisión difícil y su rastro para verificarla. Más abajo, lo demás.",
+    "archivoEntrada": "Proyectos más pequeños, propuestas entregadas y cosas todavía en construcción. Sin caso largo, pero aquí están."
+  },
+  "servicios": {
+    "titulo": "Software a medida",
+    "entrada": "Construyo sistemas para negocios que ya tienen el problema claro y necesitan que alguien lo resuelva bien.",
+    "comoTitulo": "Cómo trabajo",
+    "queNoTitulo": "Lo que no hago"
+  },
+  "productos": {
+    "titulo": "Sistemas en alquiler",
+    "entrada": "Software que ya existe, ya funciona y ya tiene gente usándolo. Se alquila por mensualidad, sin desarrollo de por medio.",
+    "verDemo": "Ver la demo"
+  },
+  "contacto": {
+    "titulo": "Hablemos",
+    "entrada": "La forma más rápida es el correo. Respondo en menos de un día hábil.",
+    "queIncluir": "Si es por un proyecto, ayuda que me cuentes qué problema quieres resolver y para cuándo. No hace falta que sepas cómo se resuelve: para eso estoy."
+  }
+}

@@ -1,0 +1,305 @@
+@import 'tailwindcss';
+
+/* color-mode pone la clase en <html>; el variant de Tailwind la sigue. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+  Todo el color en OKLCH: la luminancia es perceptualmente uniforme, así que
+  generar la variante de un token es mover L y ajustar C, no volver a adivinar.
+  Los ratios de contraste están calculados en scripts/contraste.py — ese script
+  manda sobre cualquier ajuste a ojo. Si tocas un valor aquí, córrelo.
+*/
+
+:root {
+  color-scheme: light;
+
+  --fondo: oklch(0.98 0.005 85);
+  --superficie: oklch(1 0 0);
+  --hundido: oklch(0.955 0.006 85);
+
+  --tinta: oklch(0.22 0.015 250);
+  --tinta-media: oklch(0.45 0.015 250);
+  --tinta-tenue: oklch(0.52 0.015 250);
+
+  --linea: oklch(0.9 0.008 250);
+  --linea-fuerte: oklch(0.62 0.014 250);
+
+  --acento: oklch(0.48 0.11 65);
+  --acento-hover: oklch(0.42 0.105 65);
+  --acento-fg: oklch(0.99 0.005 85);
+  --acento-tenue: oklch(0.94 0.03 70);
+
+  --exito: oklch(0.48 0.09 160);
+  --aviso: oklch(0.5 0.14 40);
+
+  --sombra: 0 1px 2px oklch(0.22 0.015 250 / 0.06), 0 8px 24px oklch(0.22 0.015 250 / 0.05);
+}
+
+.dark {
+  color-scheme: dark;
+
+  --fondo: oklch(0.17 0.012 250);
+  --superficie: oklch(0.21 0.014 250);
+  --hundido: oklch(0.13 0.01 250);
+
+  --tinta: oklch(0.95 0.008 85);
+  --tinta-media: oklch(0.76 0.014 85);
+  --tinta-tenue: oklch(0.64 0.014 85);
+
+  --linea: oklch(0.3 0.012 250);
+  --linea-fuerte: oklch(0.53 0.018 250);
+
+  --acento: oklch(0.8 0.13 75);
+  --acento-hover: oklch(0.86 0.12 75);
+  --acento-fg: oklch(0.2 0.04 75);
+  --acento-tenue: oklch(0.28 0.05 75);
+
+  --exito: oklch(0.78 0.11 160);
+  --aviso: oklch(0.76 0.14 40);
+
+  --sombra: 0 1px 2px oklch(0 0 0 / 0.4), 0 8px 24px oklch(0 0 0 / 0.3);
+}
+
+@theme inline {
+  --color-fondo: var(--fondo);
+  --color-superficie: var(--superficie);
+  --color-hundido: var(--hundido);
+  --color-tinta: var(--tinta);
+  --color-tinta-media: var(--tinta-media);
+  --color-tinta-tenue: var(--tinta-tenue);
+  --color-linea: var(--linea);
+  --color-linea-fuerte: var(--linea-fuerte);
+  --color-acento: var(--acento);
+  --color-acento-hover: var(--acento-hover);
+  --color-acento-fg: var(--acento-fg);
+  --color-acento-tenue: var(--acento-tenue);
+  --color-exito: var(--exito);
+  --color-aviso: var(--aviso);
+
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+
+  --shadow-tarjeta: var(--sombra);
+}
+
+@layer base {
+  html {
+    /* Sin scroll-behavior global: lo activa solo quien no pidió menos movimiento. */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+
+  body {
+    background-color: var(--fondo);
+    color: var(--tinta);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /*
+    Fraunces es variable. `opsz` alto engrosa las astas y cierra la apertura,
+    que es lo que hace falta en display; en tamaños pequeños la fuente se
+    volvería frágil, por eso nunca se usa en cuerpo (ver BRAND §7).
+    `SOFT` bajo mantiene las terminales definidas; `WONK` activa las formas
+    peculiares de la itálica, que es donde la fuente tiene voz.
+  */
+  .fuente-display {
+    font-family: var(--font-display);
+    font-variation-settings: 'opsz' 120, 'SOFT' 20, 'WONK' 0;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+  }
+
+  .fuente-display-italica {
+    font-variation-settings: 'opsz' 120, 'SOFT' 30, 'WONK' 1;
+    font-style: italic;
+  }
+
+  /* Metadatos, cintas de evidencia y notas al margen. */
+  .mono {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Versalitas de rótulo: el único lugar con tracking positivo amplio. */
+  .rotulo {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--tinta-tenue);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--acento);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Quitar el foco por defecto solo donde ya lo reemplazamos arriba. */
+  :focus:not(:focus-visible) { outline: none; }
+
+  ::selection {
+    background-color: var(--acento);
+    color: var(--acento-fg);
+  }
+
+  /* La medida manda sobre el ancho del contenedor: 62-68 caracteres. */
+  .medida { max-width: 34rem; }
+  .medida-ancha { max-width: 42rem; }
+
+  hr { border-color: var(--linea); }
+
+  img, svg, video { max-width: 100%; height: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+  Prosa de los casos. Se escribe a mano en vez de usar @tailwindcss/typography
+  porque los tokens y la medida ya están decididos en TOKENS.md, y el plugin
+  traería su propia escala que habría que sobrescribir entera.
+
+  Dos cosas que no son obvias y que costaron una pasada:
+  1. ContentRenderer envuelve el contenido, así que NO se puede seleccionar por
+     hijo directo (`> h2`): los elementos van uno o más niveles abajo.
+  2. @nuxt/content envuelve cada título en un <a> de ancla. Sin excluirlo, la
+     regla de enlaces pinta todos los h2 de acento y subrayados.
+*/
+@layer components {
+  .prosa-caso {
+    color: var(--tinta-media);
+  }
+
+  .prosa-caso :where(h2) {
+    font-family: var(--font-display);
+    font-variation-settings: 'opsz' 40, 'SOFT' 20, 'WONK' 0;
+    font-weight: 600;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--tinta);
+    margin-top: 3.5rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--linea);
+  }
+
+  .prosa-caso :where(h3) {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--tinta);
+    margin-top: 2.5rem;
+  }
+
+  /* El ancla que @nuxt/content mete dentro de cada título no es un enlace de prosa. */
+  .prosa-caso :where(h2, h3) a {
+    color: inherit;
+    text-decoration: none;
+    font-family: inherit;
+    font-variation-settings: inherit;
+  }
+  .prosa-caso :where(h2, h3) a:hover { color: var(--acento); }
+
+  .prosa-caso :where(p) { margin-top: 1.15rem; }
+
+  .prosa-caso :where(strong) { color: var(--tinta); font-weight: 600; }
+  .prosa-caso :where(em) { font-style: italic; }
+
+  .prosa-caso :where(p, li) > a {
+    color: var(--acento);
+    text-underline-offset: 3px;
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    transition: color 120ms ease-out;
+  }
+  .prosa-caso :where(p, li) > a:hover { color: var(--acento-hover); }
+
+  .prosa-caso :where(code) {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    color: var(--acento);
+    background-color: var(--acento-tenue);
+    padding: 0.1em 0.35em;
+    border-radius: 2px;
+  }
+
+  .prosa-caso :where(pre) {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    line-height: 1.7;
+    background-color: var(--hundido);
+    border: 1px solid var(--linea);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-top: 1.75rem;
+    overflow-x: auto;
+    color: var(--tinta-media);
+  }
+  .prosa-caso :where(pre) code {
+    background: none; padding: 0; color: inherit; font-size: inherit;
+  }
+
+  /* Nota de contexto de dominio (el blockquote de los casos en inglés). */
+  .prosa-caso :where(blockquote) {
+    margin-top: 1.75rem;
+    padding: 1.15rem 1.35rem;
+    background-color: var(--superficie);
+    border-inline-start: 2px solid var(--linea-fuerte);
+    border-radius: 0 4px 4px 0;
+    font-size: 0.9375rem;
+  }
+  .prosa-caso :where(blockquote) :where(p):first-child { margin-top: 0; }
+
+  .prosa-caso :where(ul, ol) { margin-top: 1.15rem; padding-inline-start: 1.35rem; }
+  .prosa-caso :where(ul) { list-style: disc; }
+  .prosa-caso :where(ol) { list-style: decimal; }
+  .prosa-caso :where(li) { margin-top: 0.6rem; }
+  .prosa-caso :where(li)::marker { color: var(--tinta-tenue); }
+  .prosa-caso :where(li) > :where(p) { margin-top: 0.4rem; }
+
+  /* Las tablas scrollean dentro de su contenedor: nunca arrastran la página. */
+  .prosa-caso :where(table) {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+    margin-top: 1.75rem;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .prosa-caso :where(th, td) {
+    border-bottom: 1px solid var(--linea);
+    padding: 0.6rem 1.1rem 0.6rem 0;
+    text-align: start;
+    white-space: nowrap;
+    vertical-align: top;
+  }
+  .prosa-caso :where(th) {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--tinta-tenue);
+    font-weight: 500;
+  }
+  .prosa-caso :where(td):first-child { color: var(--tinta); }
+
+  .prosa-caso > :first-child > :first-child { margin-top: 0; }
+}
