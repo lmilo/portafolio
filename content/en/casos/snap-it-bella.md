@@ -23,6 +23,12 @@ enlaces:
   - etiqueta: Current store
     url: https://snapitbella.com
     tipo: vivo
+capturas:
+  - archivo: snapitbella-home.jpg
+    alt: The store homepage with the headline "Stop adjusting your loupes all day" beside a before-and-after comparison of the strap worn over clinical scrubs
+    pie: The redesigned homepage. The before-and-after settles in one image what the copy cannot explain: how the mechanism works.
+    url: snapitbella-preview.netlify.app
+    ratio: 1559 / 784
 ---
 
 Snap It™ is a silicone strap with a magnetic clasp that holds dental loupes behind the

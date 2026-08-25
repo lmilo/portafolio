@@ -159,8 +159,30 @@ lector tiene que reorientarse cada vez.
 - **Toda captura lleva `alt` descriptivo real**, no "captura de pantalla de Motila".
   El `alt` dice qué se ve: "panel del barbero con los cortes del día y las próximas
   citas".
-- Las capturas de móvil van en marco de dispositivo; las de escritorio, sin marco de
-  navegador falso — el cromo dibujado no aporta y compite con la interfaz real.
+- **Marco sobrio con la URL real.** Las capturas de escritorio van en un marco con una
+  barra fina de 32 px que muestra la URL en mono, y nada más: sin semáforos de macOS,
+  sin barra de direcciones dibujada, sin pestañas. Ese cromo es el recurso más repetido
+  del gremio y compite con la interfaz que se quiere enseñar.
+
+  La URL **sí** se conserva, y no como adorno: `motila.onrender.com/b/la-70` dice "esto
+  está en producción y aquí" mejor que cualquier frase. Es la regla de `BRAND.md` §1
+  aplicada a una imagen.
+
+  > Decisión revisada. La versión anterior de este documento descartaba todo marco de
+  > escritorio. Se corrigió porque una captura suelta flotando en la página se lee como
+  > sin terminar, y porque el argumento de la URL como evidencia no se había considerado.
+
+- Las capturas de móvil van en **marco de teléfono**: bisel redondeado y nada más. Sin
+  notch ni isla dibujada, que son detalles de un modelo concreto y envejecen en un año.
+
+- **Composición escritorio + móvil** donde el responsive sea parte de lo que se cuenta
+  (Motila, Glosas, Gestor de Fincas): el teléfono superpuesto sobre la esquina inferior
+  derecha. Por debajo de 768 px el solape se deshace y el teléfono baja a su propia fila
+  — encogido dentro de un escritorio ya pequeño no se leería, y el solape se comería la
+  esquina de la captura principal.
+
+- **Mientras una captura no exista**, su hueco lo ocupa un bloque con borde punteado que
+  dice qué irá ahí. No un rectángulo gris: un rectángulo vacío parece un error de carga.
 - Relación de aspecto reservada siempre (`aspect-ratio` en el contenedor) para que
   nada salte al cargar.
 

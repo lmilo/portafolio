@@ -25,6 +25,8 @@ if (!data.value?.caso) {
 }
 
 const caso = computed(() => data.value!.caso!)
+const portada = computed(() => caso.value.capturas?.[0])
+const resto = computed(() => caso.value.capturas?.slice(1) ?? [])
 
 useSeoMeta({
   title: () => caso.value.titulo,
@@ -53,6 +55,18 @@ useSeoMeta({
       <p class="medida-ancha mt-8 text-lg leading-relaxed text-tinta-media">
         {{ caso.resumen }}
       </p>
+
+      <CapturaCaso
+        v-if="portada"
+        :captura="portada"
+        prioridad
+        class="mt-10"
+      />
+      <CapturaPendiente
+        v-else
+        :descripcion="`Captura pendiente: ${caso.titulo}`"
+        class="mt-10"
+      />
     </header>
 
     <!--
@@ -62,6 +76,14 @@ useSeoMeta({
     <div class="prosa-caso relative py-12 lg:max-w-[34rem]">
       <ContentRenderer :value="caso" />
     </div>
+
+    <section v-if="resto.length" class="border-t border-linea py-10">
+      <CapturaCaso
+        v-for="c in resto"
+        :key="c.archivo"
+        :captura="c"
+      />
+    </section>
 
     <footer class="border-t border-linea py-10">
       <h2 class="rotulo">{{ t('comun.stack') }}</h2>

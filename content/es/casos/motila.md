@@ -19,11 +19,10 @@ stack:
   - Nuxt 4
   - Tailwind CSS v4
   - Docker Compose
-enlaces:
-  - etiqueta: Abrir la barbería demo
-    url: https://motila.onrender.com/b/la-70
-    tipo: vivo
-    duerme: true
+# PENDIENTE: la instancia de producción no tiene ninguna barbería sembrada
+# (todos los slugs dan 404 en /api/public/{slug}). El enlace vuelve en cuanto
+# se siembre la demo: etiqueta "Abrir la barbería demo", tipo vivo, duerme true.
+enlaces: []
 ---
 
 Una barbería no pierde plata cuando el sistema se cae. La pierde cuando dos personas

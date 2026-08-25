@@ -26,6 +26,12 @@ enlaces:
     url: https://crm-sposito-backend-1-v2.onrender.com
     tipo: documento
     duerme: true
+capturas:
+  - archivo: crm-sposito-dashboard.jpg
+    alt: Panel del CRM con seis tarjetas de métricas — usuarios, clientes, ideas, pilares, formatos y comentarios — sobre una tabla de usuarios con sus roles
+    pie: El panel de administración. Los datos personales de la tabla están reemplazados por ficticios; la interfaz es la real.
+    url: crm-sposito-frontend-v2.onrender.com/dashboard
+    ratio: 1559 / 784
 ---
 
 Este no es un proyecto que empecé. Es uno al que llegué.

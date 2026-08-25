@@ -19,11 +19,8 @@ stack:
   - Nuxt 4
   - Tailwind CSS v4
   - Docker Compose
-enlaces:
-  - etiqueta: Open the demo shop
-    url: https://motila.onrender.com/b/la-70
-    tipo: vivo
-    duerme: true
+# PENDIENTE: ver la nota en la versión en español.
+enlaces: []
 ---
 
 A barbershop doesn't lose money when the system goes down. It loses money when two

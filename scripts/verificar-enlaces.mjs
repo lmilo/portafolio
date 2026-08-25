@@ -23,7 +23,8 @@ function archivosMd(dir) {
 const urls = new Set()
 for (const ruta of archivosMd(RAIZ)) {
   for (const m of readFileSync(ruta, 'utf8').matchAll(/^\s+url:\s*(\S+)/gm)) {
-    urls.add(m[1].replace(/^["']|["']$/g, ''))
+    const u = m[1].replace(/^["']|["']$/g, '')
+    if (u.startsWith('http')) urls.add(u)
   }
 }
 
@@ -34,7 +35,22 @@ const resultados = await Promise.all([...urls].map(async (url) => {
   const t = setTimeout(() => control.abort(), ESPERA)
   try {
     const r = await fetch(url, { redirect: 'follow', signal: control.signal })
-    return { url, estado: r.status, ok: r.status < 400 }
+    if (r.status >= 400) return { url, estado: r.status, ok: false }
+
+    // Una SPA devuelve 200 y pinta el "no encontrado" en el cliente, así que
+    // el código de estado no basta. Esto ya dejó pasar un enlace roto de
+    // Motila: /b/la-70 respondía 200 mostrando "Aquí no corta nadie".
+    const cuerpo = (await r.text()).toLowerCase()
+    const señales = [
+      'no corta nadie',           // la página de barbería inexistente de Motila
+      'no encontramos esta',
+      'página no encontrada',
+      'page not found'
+    ]
+    const sospecha = señales.find(s => cuerpo.includes(s))
+    return sospecha
+      ? { url, estado: `200 pero "${sospecha}"`, ok: false }
+      : { url, estado: r.status, ok: true }
   } catch (e) {
     return { url, estado: e.name === 'AbortError' ? 'timeout' : 'error', ok: false }
   } finally {

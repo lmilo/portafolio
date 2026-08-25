@@ -24,7 +24,17 @@ const esquemaCaso = z.object({
     archivo: z.string(),
     alt: z.string(),
     pie: z.string().optional(),
-    dispositivo: z.enum(['escritorio', 'movil']).default('escritorio')
+    dispositivo: z.enum(['escritorio', 'movil']).default('escritorio'),
+    // Se muestra en la barra del marco. Es evidencia, no decoración: dice que
+    // esto está en producción y dónde (BRAND §1).
+    url: z.string().optional(),
+    ratio: z.string().optional(),
+    // Cuando existe, la captura se rinde como composición: el móvil
+    // superpuesto sobre la esquina del escritorio.
+    movil: z.object({
+      archivo: z.string(),
+      alt: z.string()
+    }).optional()
   })).default([])
 })
 
