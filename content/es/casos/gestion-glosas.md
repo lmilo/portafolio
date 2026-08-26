@@ -17,16 +17,13 @@ stack:
   - TypeScript
   - Vitest
   - Docker Compose
-enlaces:
-  - etiqueta: Abrir la aplicación
-    url: https://gestion-glosas-412e.onrender.com
-    tipo: vivo
-    duerme: true
+# Sin enlace público: la aplicación lleva la facturación real de un cliente.
+enlaces: []
 capturas:
   - archivo: glosas-entidad.jpg
     alt: "Ficha de ARL Sura con la cinta de días de revisión arriba —lunes ARL Sura, martes EPS Sura, miércoles Salud Total resaltado como el día de hoy, jueves EPS Sanitas— y debajo sus facturas con el estado de vencimiento"
     pie: "La cinta de arriba es el calendario de revisión: cada entidad en su día y el de hoy resaltado. Bajo el nombre, «Revisión los lunes». Nombres de personas, números de factura y montos van cambiados; la entidad y su NIT son públicos."
-    url: gestion-glosas-412e.onrender.com/entidades/arl-sura
+    url: seguimiento de glosas · acceso restringido/entidades/arl-sura
     ratio: 1458 / 812
   - archivo: glosas-cartera.jpg
     alt: "Cartera de glosas con una tarjeta por entidad: ARL Sura, EPS Sura, Salud Total y EPS Sanitas, cada una con su tipo, su NIT y el conteo de glosas abiertas"

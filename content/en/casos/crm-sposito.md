@@ -21,16 +21,14 @@ stack:
   - TypeScript
   - Google Drive API
   - Docker
-enlaces:
-  - etiqueta: API reference
-    url: https://crm-sposito-backend-1-v2.onrender.com
-    tipo: documento
-    duerme: true
+# No public link: the system holds real client data. Shown in an interview,
+# not left indexed.
+enlaces: []
 capturas:
   - archivo: crm-sposito-dashboard.jpg
     alt: The CRM dashboard with six metric cards — users, clients, ideas, pillars, formats and comments — above a table of users and their roles
     pie: The admin panel. Personal data in the table is replaced with fictional values; the interface is the real one.
-    url: crm-sposito-frontend-v2.onrender.com/dashboard
+    url: internal crm · content agency
     ratio: 1559 / 784
 ---
 
@@ -124,9 +122,8 @@ by the boot-time auto-migrator.
 
 ## Status
 
-In production and in daily use. What's next on my list, in order:
+In production and in daily use, and I still own the system.
 
-1. **Rotate credentials.** The `.env` was inside the image and in the git index, with
-   the database credentials and the Google secrets. It's out of both now, but it's
-   still in the history, so the keys need rotating.
-2. **Close off the panel**, which currently loads without asking for authentication.
+Security is the next front, and it's being worked on with the client. The details
+don't belong here: a portfolio is no place to publish the protection status of
+somebody else's system, or of your own.

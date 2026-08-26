@@ -17,16 +17,13 @@ stack:
   - TypeScript
   - Vitest
   - Docker Compose
-enlaces:
-  - etiqueta: Open the app
-    url: https://gestion-glosas-412e.onrender.com
-    tipo: vivo
-    duerme: true
+# No public link: the app holds a client's real invoicing.
+enlaces: []
 capturas:
   - archivo: glosas-entidad.jpg
     alt: "ARL Sura's page with the review-day strip along the top —Monday ARL Sura, Tuesday EPS Sura, Wednesday Salud Total highlighted as today, Thursday EPS Sanitas— and its invoices below with their overdue status"
     pie: "The strip along the top is the review calendar: each insurer on its day, with today highlighted. Under the name, «reviewed on Mondays». Names, invoice numbers and amounts are changed; the insurer and its tax ID are public."
-    url: gestion-glosas-412e.onrender.com/entidades/arl-sura
+    url: claims tracking · restricted access/entidades/arl-sura
     ratio: 1458 / 812
   - archivo: glosas-cartera.jpg
     alt: "Claims portfolio with one card per insurer: ARL Sura, EPS Sura, Salud Total and EPS Sanitas, each with its type, tax ID and count of open objections"

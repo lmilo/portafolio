@@ -30,7 +30,8 @@
     "volverArriba": "Volver arriba",
     "hablemos": "Hablemos",
     "desliza": "Desliza",
-    "cargando": "Cargando"
+    "cargando": "Cargando",
+    "sinEnlace": "Sin enlace público: este sistema tiene datos reales de personas. Lo muestro en una conversación."
   },
   "home": {
     "kicker": "Desarrollador fullstack · Medellín, Colombia",

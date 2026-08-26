@@ -100,6 +100,12 @@ useSeoMeta({
       <div v-if="caso.enlaces?.length" class="mt-8 flex flex-wrap gap-4">
         <EnlaceProyecto v-for="e in caso.enlaces" :key="e.url" :enlace="e" />
       </div>
+      <!-- La ausencia de enlace se explica. Sin esto se lee como un olvido, y
+           lo que es en realidad es una decisión sobre datos de terceros. -->
+      <p v-else class="mono mt-8 flex max-w-lg items-start gap-2 border-2 border-linea-fuerte p-4">
+        <span aria-hidden="true">🔒</span>
+        <span>{{ t('comun.sinEnlace') }}</span>
+      </p>
 
       <nav class="mt-14 flex flex-wrap justify-between gap-4 border-t-2 border-linea-fuerte pt-8">
         <NuxtLink

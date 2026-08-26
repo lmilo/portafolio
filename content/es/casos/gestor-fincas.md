@@ -17,16 +17,13 @@ stack:
   - TypeScript
   - Zod
   - Vitest
-enlaces:
-  - etiqueta: Abrir la aplicación
-    url: https://gestor-fincas.onrender.com
-    tipo: vivo
-    duerme: true
+# Sin enlace público: los paseos llevan teléfonos y documentos de gente real.
+enlaces: []
 capturas:
   - archivo: gestor-fincas-paseo.jpg
     alt: "Resumen de un paseo con los totales de finca, mercado, licor y transporte, y a la derecha «Le toca a cada uno $141.196 entre 5 confirmados»"
     pie: "El cálculo que resuelve la discusión: cuánto pone cada quien, sobre la gente que confirmó de verdad. Arriba, las siete pestañas del paseo. El nombre va cambiado."
-    url: gestor-fincas.onrender.com/paseos
+    url: gestor de paseos · acceso restringido
     ratio: 1458 / 812
 ---
 

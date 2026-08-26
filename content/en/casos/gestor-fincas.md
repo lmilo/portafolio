@@ -17,16 +17,13 @@ stack:
   - TypeScript
   - Zod
   - Vitest
-enlaces:
-  - etiqueta: Open the app
-    url: https://gestor-fincas.onrender.com
-    tipo: vivo
-    duerme: true
+# No public link: trips carry real people's phone numbers and IDs.
+enlaces: []
 capturas:
   - archivo: gestor-fincas-paseo.jpg
     alt: "A trip summary with totals for the house, groceries, drinks and transport, and on the right «each person owes $141,196 across 5 confirmed»"
     pie: "The calculation that settles the argument: what each person owes, over the people who actually confirmed. Above it, the trip's seven tabs. The name is changed."
-    url: gestor-fincas.onrender.com/paseos
+    url: trip planner · restricted access
     ratio: 1458 / 812
 ---
 

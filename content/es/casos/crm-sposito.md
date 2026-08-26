@@ -21,16 +21,14 @@ stack:
   - TypeScript
   - Google Drive API
   - Docker
-enlaces:
-  - etiqueta: Referencia del API
-    url: https://crm-sposito-backend-1-v2.onrender.com
-    tipo: documento
-    duerme: true
+# Sin enlace público: el sistema tiene datos reales de los clientes de la
+# agencia. Se enseña en entrevista, no se deja indexado.
+enlaces: []
 capturas:
   - archivo: crm-sposito-dashboard.jpg
     alt: Panel del CRM con seis tarjetas de métricas — usuarios, clientes, ideas, pilares, formatos y comentarios — sobre una tabla de usuarios con sus roles
     pie: El panel de administración. Los datos personales de la tabla están reemplazados por ficticios; la interfaz es la real.
-    url: crm-sposito-frontend-v2.onrender.com/dashboard
+    url: crm interno · agencia de contenidos
     ratio: 1559 / 784
 ---
 
@@ -126,9 +124,8 @@ hacían por el auto-migrador del arranque.
 
 ## Estado
 
-En producción y en uso diario. Lo que sigue en mi lista, en este orden:
+En producción y en uso diario, y sigo a cargo del sistema.
 
-1. **Rotar credenciales.** El `.env` estaba dentro de la imagen y en el índice de git,
-   con las credenciales de la base y los secretos de Google. Se sacó de ambos, pero
-   sigue en el historial, así que las claves hay que rotarlas.
-2. **Cerrar el acceso al panel**, que hoy carga sin pedir autenticación.
+El siguiente frente es el de seguridad, que se está trabajando con el cliente. Los
+detalles no van aquí: un portafolio no es sitio para publicar el estado de
+protección de un sistema ajeno, ni siquiera el propio.
