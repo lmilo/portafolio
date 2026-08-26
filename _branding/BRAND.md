@@ -185,5 +185,5 @@ no es un defecto del caso, es su contexto.
 | Sin barras de nivel de habilidad | Ficción medible por nadie |
 | Sin blog | Aumenta el mantenimiento y compite con los casos por la atención. Si algún día hay notas, van dentro del caso al que pertenecen |
 | Sin testimonios | No los hay reales todavía. Cuando existan, con nombre y cargo o no van |
-| Fraunces solo en titulares | Tiene carácter fuerte; en cuerpo cansaría. El riesgo se controla con el alcance |
+| El display en versales, solo en titulares | Las mayúsculas solo funcionan en tramos cortos; en cuerpo son ilegibles. El riesgo se controla con el alcance |
 | Los links a Render avisan del arranque | Los servicios gratuitos duermen ~50 s. Un botón que parece roto es peor que un botón con una advertencia honesta |
