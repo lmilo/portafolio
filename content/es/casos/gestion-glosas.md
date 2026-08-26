@@ -22,6 +22,12 @@ enlaces:
     url: https://gestion-glosas-412e.onrender.com
     tipo: vivo
     duerme: true
+capturas:
+  - archivo: glosas-cartera.jpg
+    alt: "Cartera de glosas con una tarjeta por entidad: ARL Sura, EPS Sura, Salud Total y EPS Sanitas, cada una con su tipo, su NIT y el conteo de glosas abiertas"
+    pie: "Cada entidad muestra su tipo junto al nombre. ARL Sura es una ARL, no una EPS, y el sistema lo dice. El usuario y el monto van cambiados."
+    url: gestion-glosas-412e.onrender.com
+    ratio: 1559 / 784
 ---
 
 Cuando una aseguradora recibe una factura médica y objeta parte de ella, eso es una

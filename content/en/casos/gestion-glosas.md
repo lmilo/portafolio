@@ -22,6 +22,12 @@ enlaces:
     url: https://gestion-glosas-412e.onrender.com
     tipo: vivo
     duerme: true
+capturas:
+  - archivo: glosas-cartera.jpg
+    alt: "Claims portfolio with one card per insurer: ARL Sura, EPS Sura, Salud Total and EPS Sanitas, each with its type, tax ID and count of open objections"
+    pie: "Each insurer shows its type next to the name. ARL Sura is a workers' compensation carrier, not a health insurer, and the system says so. The user name and the amount are changed."
+    url: gestion-glosas-412e.onrender.com
+    ratio: 1559 / 784
 ---
 
 > **Context.** This runs in Colombia. A *glosa* is the formal objection a health
