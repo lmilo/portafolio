@@ -24,7 +24,6 @@ export default defineNuxtConfig({
       // el display va en Expanded pesado, el cuerpo en ancho normal. Un solo
       // tipo con contraste de peso y ancho tiene más voz que un par tímido.
       { name: 'Archivo', provider: 'google', weights: [400, 500, 600, 700, 800] },
-      { name: 'Archivo Expanded', provider: 'google', weights: [600, 700, 800] },
       // Martian Mono para las mediciones: cifras tabulares, formas técnicas,
       // y no es ninguna de las mono que salen por defecto.
       { name: 'Martian Mono', provider: 'google', weights: [400, 500, 600] }
@@ -52,6 +51,10 @@ export default defineNuxtConfig({
   },
 
   app: {
+    // Transición entre páginas: corta y solo sobre transform/opacity, para que
+    // no bloquee la lectura del contenido nuevo. Se anula con reduced-motion
+    // desde el CSS global.
+    pageTransition: { name: 'pagina', mode: 'out-in' },
     head: {
       // El '%s' vacío deja el título tal cual lo pone cada página; el sufijo
       // solo aparece cuando la página no es la home.
@@ -76,9 +79,20 @@ export default defineNuxtConfig({
 
   ogImage: { enabled: false },
 
-  // Todo el sitio es estático: no hay nada que resolver en petición.
+  // Secretos del formulario. Sin prefijo `public`: no salen al navegador.
+  runtimeConfig: {
+    smtpHost: '',
+    smtpPuerto: '587',
+    smtpUsuario: '',
+    smtpClave: '',
+    correoDestino: ''
+  },
+
+  // Las páginas se prerenderizan igual; el preset `vercel` (y no
+  // `vercel-static`) es lo que permite además desplegar /api/contacto como
+  // función. Sin él, el formulario no tendría dónde enviarse.
   nitro: {
-    preset: 'vercel-static',
+    preset: 'vercel',
     prerender: { crawlLinks: true, routes: ['/', '/en'] }
   },
 

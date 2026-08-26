@@ -24,7 +24,13 @@
     "anterior": "Anterior",
     "escribeme": "Escríbeme",
     "disponible": "disponible para trabajar",
-    "stack": "Con qué está hecho"
+    "stack": "Con qué está hecho",
+    "abrirMenu": "Abrir menú",
+    "cerrarMenu": "Cerrar menú",
+    "volverArriba": "Volver arriba",
+    "hablemos": "Hablemos",
+    "desliza": "Desliza",
+    "cargando": "Cargando"
   },
   "home": {
     "kicker": "Desarrollador fullstack · Medellín, Colombia",
@@ -78,7 +84,30 @@
   },
   "contacto": {
     "titulo": "Hablemos",
-    "entrada": "La forma más rápida es el correo. Respondo en menos de un día hábil.",
-    "queIncluir": "Si es por un proyecto, ayuda que me cuentes qué problema quieres resolver y para cuándo. No hace falta que sepas cómo se resuelve: para eso estoy."
+    "entrada": "Cuéntame qué se rompe hoy y qué cuesta que se rompa. Respondo en menos de un día hábil.",
+    "queIncluir": "No hace falta que sepas cómo se resuelve: para eso estoy.",
+    "abrirFormulario": "Escríbeme por aquí",
+    "oPorCorreo": "O si prefieres, por correo directo",
+    "nombre": "Tu nombre",
+    "correo": "Tu correo",
+    "asunto": "¿De qué se trata?",
+    "asuntoEmpleo": "Una vacante",
+    "asuntoProyecto": "Un proyecto a medida",
+    "asuntoProducto": "Alquilar un sistema",
+    "asuntoOtro": "Otra cosa",
+    "mensaje": "Cuéntame",
+    "mensajeAyuda": "Qué problema quieres resolver y para cuándo lo necesitas.",
+    "enviar": "Enviar mensaje",
+    "enviando": "Enviando…",
+    "exitoTitulo": "Mensaje enviado",
+    "exitoTexto": "Te respondo en menos de un día hábil. Si es urgente, escríbeme directo al correo.",
+    "errorTitulo": "No se pudo enviar",
+    "errorTexto": "Algo falló al enviar el mensaje. Escríbeme directo al correo y lo resolvemos.",
+    "errNombre": "Escribe tu nombre.",
+    "errCorreo": "Ese correo no parece válido.",
+    "errMensaje": "Cuéntame un poco más: al menos 20 caracteres.",
+    "errMensajeLargo": "El mensaje es muy largo. Máximo 2000 caracteres.",
+    "otroMensaje": "Enviar otro mensaje",
+    "requerido": "obligatorio"
   }
 }

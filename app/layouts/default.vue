@@ -14,34 +14,43 @@ const enlaces = computed(() => [
   <div class="flex min-h-dvh flex-col bg-fondo text-tinta">
     <a
       href="#contenido"
-      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50
-             focus:rounded-sm focus:bg-acento focus:px-4 focus:py-2 focus:text-acento-fg"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4
+             focus:bg-acento focus:px-4 focus:py-2 focus:font-bold focus:text-acento-fg"
+      style="z-index: var(--z-superpuesto)"
+    >{{ t('comun.saltarContenido') }}</a>
+
+    <header
+      class="sticky top-0 border-b-2 border-linea-fuerte bg-fondo/95 backdrop-blur-sm"
+      style="z-index: var(--z-pegado)"
     >
-      {{ t('comun.saltarContenido') }}
-    </a>
-
-    <!--
-      La cabecera no es sticky a propósito: una barra fija roba 64px de alto
-      durante toda la lectura, y este sitio pide leer (LAYOUT §3).
-    -->
-    <header class="mx-auto flex w-full max-w-[1200px] flex-wrap items-center gap-x-6 gap-y-3 px-6 py-6 md:px-12">
-      <NuxtLink :to="localePath('/')" class="fuente-display text-lg tracking-normal">
-        {{ perfil.iniciales }}
-      </NuxtLink>
-
-      <nav class="flex flex-wrap items-center gap-x-5 gap-y-1" aria-label="principal">
+      <div class="mx-auto flex w-full max-w-[1280px] items-center gap-4 px-5 py-3 md:px-10">
         <NuxtLink
-          v-for="e in enlaces"
-          :key="e.a"
-          :to="localePath(e.a)"
-          class="text-sm text-tinta-media transition-colors duration-[120ms] hover:text-acento"
-          active-class="text-tinta"
-        >{{ e.txt }}</NuxtLink>
-      </nav>
+          :to="localePath('/')"
+          class="fuente-display border-2 border-linea-fuerte bg-acento px-2.5 py-1
+                 text-lg text-acento-fg"
+        >{{ perfil.iniciales }}</NuxtLink>
 
-      <div class="ms-auto flex items-center gap-3">
-        <SelectorTema />
-        <SelectorIdioma />
+        <nav class="hidden items-center gap-1 md:flex" aria-label="principal">
+          <NuxtLink
+            v-for="e in enlaces"
+            :key="e.a"
+            :to="localePath(e.a)"
+            class="border-2 border-transparent px-3 py-1.5 text-sm font-semibold
+                   transition-colors duration-150 hover:border-linea-fuerte hover:bg-acento
+                   hover:text-acento-fg"
+            active-class="border-linea-fuerte bg-acento text-acento-fg"
+          >{{ e.txt }}</NuxtLink>
+        </nav>
+
+        <div class="ms-auto flex items-center gap-2">
+          <NuxtLink
+            :to="localePath('/contacto')"
+            class="pulsable boton-acento hidden px-4 py-2 text-sm lg:inline-flex"
+          >{{ t('comun.hablemos') }}</NuxtLink>
+          <SelectorTema />
+          <SelectorIdioma />
+          <MenuMovil :enlaces="enlaces" />
+        </div>
       </div>
     </header>
 
@@ -49,22 +58,35 @@ const enlaces = computed(() => [
       <slot />
     </main>
 
-    <footer class="mt-24 border-t border-linea">
-      <div class="mx-auto flex w-full max-w-[1200px] flex-wrap items-center justify-between gap-4 px-6 py-10 md:px-12">
-        <p class="mono text-tinta-tenue">
-          {{ perfil.nombre }} · {{ perfil.ciudad[$i18n.locale as 'es' | 'en'] }}
-        </p>
-        <ul class="flex flex-wrap gap-x-5 gap-y-2">
-          <li v-for="s in enlacesSociales()" :key="s.url">
-            <a
-              :href="s.url"
-              class="mono text-tinta-media transition-colors duration-[120ms] hover:text-acento"
-              :target="s.url.startsWith('mailto:') ? undefined : '_blank'"
-              :rel="s.url.startsWith('mailto:') ? undefined : 'noopener noreferrer'"
-            >{{ s.etiqueta }}</a>
-          </li>
-        </ul>
+    <footer class="border-t-2 border-linea-fuerte bg-hundido">
+      <div class="mx-auto w-full max-w-[1280px] px-5 py-12 md:px-10">
+        <div class="flex flex-wrap items-start justify-between gap-8">
+          <div>
+            <p class="fuente-display text-2xl">{{ perfil.nombre }}</p>
+            <p class="mono mt-2 text-tinta-tenue">
+              {{ perfil.titulo[$i18n.locale as 'es' | 'en'] }} ·
+              {{ perfil.ciudad[$i18n.locale as 'es' | 'en'] }}
+            </p>
+          </div>
+
+          <nav aria-label="redes">
+            <ul class="flex flex-wrap gap-3">
+              <li v-for="s in enlacesSociales()" :key="s.url">
+                <a
+                  :href="s.url"
+                  class="pulsable boton-hueco inline-flex px-4 py-2 text-sm"
+                  :target="s.url.startsWith('mailto:') ? undefined : '_blank'"
+                  :rel="s.url.startsWith('mailto:') ? undefined : 'noopener noreferrer'"
+                >{{ s.etiqueta }}</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="cinta-rayada mt-10 h-3" aria-hidden="true" />
       </div>
     </footer>
+
+    <VolverArriba />
   </div>
 </template>

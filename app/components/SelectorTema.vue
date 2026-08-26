@@ -2,8 +2,8 @@
 const colorMode = useColorMode()
 const { t } = useI18n()
 
-// Antes de hidratar no se sabe el tema real: se rinde un hueco del mismo
-// tamaño para que nada salte cuando llegue el valor.
+// Antes de hidratar no se conoce el tema real: se reserva el hueco para que
+// nada salte cuando llegue el valor.
 const montado = ref(false)
 onMounted(() => { montado.value = true })
 
@@ -16,13 +16,13 @@ function alternar() {
 <template>
   <button
     type="button"
+    class="pulsable boton-hueco flex size-11 items-center justify-center"
     :aria-label="t('comun.cambiarTema')"
     :aria-pressed="montado ? esOscuro : undefined"
-    class="rotulo rounded-sm px-2 py-1 transition-colors duration-[120ms] hover:text-acento"
     @click="alternar"
   >
     <ClientOnly>
-      <span aria-hidden="true">{{ esOscuro ? '☾' : '☀' }}</span>
+      <span aria-hidden="true" class="text-base">{{ esOscuro ? '☾' : '☀' }}</span>
       <template #fallback><span aria-hidden="true" class="opacity-0">☾</span></template>
     </ClientOnly>
   </button>

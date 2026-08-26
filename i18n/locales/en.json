@@ -24,7 +24,13 @@
     "anterior": "Previous",
     "escribeme": "Email me",
     "disponible": "available for work",
-    "stack": "Built with"
+    "stack": "Built with",
+    "abrirMenu": "Open menu",
+    "cerrarMenu": "Close menu",
+    "volverArriba": "Back to top",
+    "hablemos": "Let's talk",
+    "desliza": "Scroll",
+    "cargando": "Loading"
   },
   "home": {
     "kicker": "Full-stack developer · Medellín, Colombia",
@@ -78,7 +84,30 @@
   },
   "contacto": {
     "titulo": "Let's talk",
-    "entrada": "Email is fastest. I reply within one business day.",
-    "queIncluir": "If it's about a project, it helps to tell me what problem you want solved and by when. You don't need to know how it gets solved — that's my part."
+    "entrada": "Tell me what breaks today and what that costs. I reply within one business day.",
+    "queIncluir": "You don't need to know how it gets solved. That's my part.",
+    "abrirFormulario": "Write to me here",
+    "oPorCorreo": "Or by email directly, if you prefer",
+    "nombre": "Your name",
+    "correo": "Your email",
+    "asunto": "What's this about?",
+    "asuntoEmpleo": "A role",
+    "asuntoProyecto": "Custom software",
+    "asuntoProducto": "Renting a system",
+    "asuntoOtro": "Something else",
+    "mensaje": "Tell me",
+    "mensajeAyuda": "What problem you want solved, and by when you need it.",
+    "enviar": "Send message",
+    "enviando": "Sending…",
+    "exitoTitulo": "Message sent",
+    "exitoTexto": "I'll reply within one business day. If it's urgent, email me directly.",
+    "errorTitulo": "Couldn't send",
+    "errorTexto": "Something failed while sending. Email me directly and we'll sort it out.",
+    "errNombre": "Please enter your name.",
+    "errCorreo": "That email doesn't look valid.",
+    "errMensaje": "Tell me a bit more: at least 20 characters.",
+    "errMensajeLargo": "That message is too long. 2000 characters max.",
+    "otroMensaje": "Send another message",
+    "requerido": "required"
   }
 }

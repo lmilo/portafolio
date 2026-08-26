@@ -1,32 +1,50 @@
 <script setup lang="ts">
 const { t } = useI18n()
+useRevelar()
 useSeoMeta({ title: () => t('contacto.titulo'), description: () => t('contacto.entrada') })
 </script>
 
 <template>
-  <div class="mx-auto w-full max-w-[1200px] px-6 md:px-12">
-    <header class="py-16 md:py-24">
-      <h1 class="fuente-display text-[clamp(2.5rem,6vw,3.5rem)]">{{ t('contacto.titulo') }}</h1>
+  <div class="mx-auto w-full max-w-[1280px] px-5 py-14 md:px-10 md:py-20">
+    <header class="max-w-3xl">
+      <h1 class="fuente-display text-[clamp(2.25rem,6vw,4rem)]">{{ t('contacto.titulo') }}</h1>
+      <div class="mt-6 h-2 w-40 bg-acento" aria-hidden="true" />
       <p class="medida-ancha mt-6 text-lg text-tinta-media">{{ t('contacto.entrada') }}</p>
-
-      <a
-        :href="`mailto:${perfil.correo}`"
-        class="fuente-display mt-10 inline-block text-2xl text-acento underline
-               underline-offset-[6px] transition-colors duration-[120ms] hover:text-acento-hover md:text-3xl"
-      >{{ perfil.correo }}</a>
-
-      <p class="medida-ancha mt-10 text-tinta-media">{{ t('contacto.queIncluir') }}</p>
-
-      <ul class="mt-10 flex flex-wrap gap-x-6 gap-y-3">
-        <li v-for="s in enlacesSociales()" :key="s.url">
-          <a
-            :href="s.url"
-            class="mono text-tinta-media transition-colors duration-[120ms] hover:text-acento"
-            :target="s.url.startsWith('mailto:') ? undefined : '_blank'"
-            :rel="s.url.startsWith('mailto:') ? undefined : 'noopener noreferrer'"
-          >{{ s.etiqueta }}</a>
-        </li>
-      </ul>
+      <p class="medida-ancha mt-3 text-tinta-media">{{ t('contacto.queIncluir') }}</p>
     </header>
+
+    <div class="mt-12 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:items-start">
+      <FormularioContacto class="revelar" />
+
+      <aside class="revelar space-y-5" style="--retraso: 60ms">
+        <div class="bloque bg-hundido p-6">
+          <p class="mono font-semibold uppercase">{{ t('contacto.oPorCorreo') }}</p>
+          <a
+            :href="`mailto:${perfil.correo}`"
+            class="mono mt-3 block break-all font-bold text-enlace underline underline-offset-4
+                   transition-colors duration-150 hover:text-enlace-hover"
+          >{{ perfil.correo }}</a>
+
+          <ul class="mt-6 space-y-2.5">
+            <li v-for="s in enlacesSociales().filter(s => !s.url.startsWith('mailto:'))" :key="s.url">
+              <a
+                :href="s.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="pulsable boton-hueco flex w-full items-center justify-between px-4 py-2.5 text-sm"
+              >
+                {{ s.etiqueta }}
+                <span aria-hidden="true">↗</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <p class="mono flex items-center gap-2 text-tinta-tenue">
+          <span class="size-2 bg-exito" aria-hidden="true" />
+          {{ t('comun.disponible') }}
+        </p>
+      </aside>
+    </div>
   </div>
 </template>
