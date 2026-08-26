@@ -23,11 +23,11 @@ enlaces:
     tipo: vivo
     duerme: true
 capturas:
-  - archivo: gestor-fincas-paseos.jpg
-    alt: "A list of trips with dates, the chosen house, how many people are going, team size and status; one carries a shared label"
-    pie: "Your own trips and the ones somebody shared with you, in one list. The shared label is the multi-user part. Names are changed."
+  - archivo: gestor-fincas-paseo.jpg
+    alt: "A trip summary with totals for the house, groceries, drinks and transport, and on the right «each person owes $141,196 across 5 confirmed»"
+    pie: "The calculation that settles the argument: what each person owes, over the people who actually confirmed. Above it, the trip's seven tabs. The name is changed."
     url: gestor-fincas.onrender.com/paseos
-    ratio: 1532 / 802
+    ratio: 1458 / 812
 ---
 
 > **Context.** A *finca* is a rented country house — the standard way a group of

@@ -24,11 +24,14 @@ withDefaults(defineProps<{
     <!-- md+ : el teléfono se superpone. La caja necesita el padding derecho e
          inferior para que el solape no se recorte. -->
     <div class="md:relative md:pb-10 md:pe-16">
-      <div
-        class="overflow-hidden rounded-lg border border-linea-fuerte bg-superficie shadow-tarjeta"
-      >
-        <div v-if="url" class="flex items-center gap-2 border-b border-linea px-4 py-2">
-          <span class="mono truncate text-tinta-tenue">{{ url }}</span>
+      <div class="border-2 border-linea-fuerte bg-superficie p-2 pb-0 shadow-[6px_6px_0_var(--linea-fuerte)]">
+        <div v-if="url" class="flex items-center gap-2 border-b-2 border-linea-fuerte px-2 pb-2">
+          <span class="flex gap-1" aria-hidden="true">
+            <span class="size-2 border border-linea-fuerte" />
+            <span class="size-2 border border-linea-fuerte" />
+            <span class="size-2 border border-linea-fuerte" />
+          </span>
+          <span class="mono truncate ps-1 text-tinta-tenue">{{ url }}</span>
         </div>
         <NuxtImg
           :src="escritorio"
@@ -39,6 +42,13 @@ withDefaults(defineProps<{
           sizes="100vw md:768px lg:1024px"
           class="block w-full object-cover object-top"
           :style="{ aspectRatio: ratio }"
+        />
+      </div>
+
+      <div class="relative -mx-[3%] h-3 border-x-2 border-b-2 border-linea-fuerte bg-hundido" aria-hidden="true">
+        <span
+          class="absolute left-1/2 top-0 h-1.5 w-16 -translate-x-1/2 border-x-2 border-b-2
+                 border-linea-fuerte bg-superficie"
         />
       </div>
 

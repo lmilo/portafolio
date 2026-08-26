@@ -23,11 +23,11 @@ enlaces:
     tipo: vivo
     duerme: true
 capturas:
-  - archivo: gestor-fincas-paseos.jpg
-    alt: "Lista de paseos con sus fechas, la finca elegida, cuánta gente va, el tamaño del equipo y el estado; uno de ellos lleva la etiqueta compartido"
-    pie: "Los paseos propios y los que alguien compartió, en la misma lista. La etiqueta compartido es la parte multiusuario. Los nombres van cambiados."
+  - archivo: gestor-fincas-paseo.jpg
+    alt: "Resumen de un paseo con los totales de finca, mercado, licor y transporte, y a la derecha «Le toca a cada uno $141.196 entre 5 confirmados»"
+    pie: "El cálculo que resuelve la discusión: cuánto pone cada quien, sobre la gente que confirmó de verdad. Arriba, las siete pestañas del paseo. El nombre va cambiado."
     url: gestor-fincas.onrender.com/paseos
-    ratio: 1532 / 802
+    ratio: 1458 / 812
 ---
 
 Organizar un paseo de finca con amigos son cinco problemas encadenados: cuál finca sale
