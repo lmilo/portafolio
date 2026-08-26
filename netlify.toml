@@ -1,0 +1,35 @@
+# `pnpm build`, NO `pnpm generate`. Con el preset netlify, `generate` fuerza un
+# prerender total y no empaqueta ninguna función: el formulario se quedaría sin
+# endpoint. `build` prerenderiza igual las páginas y además deja la función de
+# /api/contacto.
+[build]
+  command = "pnpm build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+  # Corepack deja que pnpm salga de packageManager en package.json en vez de
+  # instalarse a mano con una versión que puede no coincidir.
+  NPM_FLAGS = "--version"
+
+# Las cabeceras no van en el código: aquí aplican a todo lo que sirve Netlify,
+# incluidos los assets estáticos.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+
+# Las capturas y las fuentes llevan hash en la URL: se pueden cachear para
+# siempre sin miedo a servir una versión vieja.
+[[headers]]
+  for = "/_nuxt/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/capturas/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

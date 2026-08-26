@@ -1,8 +1,11 @@
 ---
 titulo: Consultoría Jurídica Patrimonial del Sur
-resumen: Two visual directions for a law firm, delivered as navigable HTML mockups rather than flat images — the client compares by moving through the real page. One warm and institutional, one modern Andean, each with its palette and type pairing argued for.
+resumen: "Site for a civil and property law firm in Pasto, Colombia, on its own domain and in production. It started as two visual directions delivered as navigable HTML rather than flat images: the client chose by moving through the real page. The one that won now runs with a legal blog, guidance topics and WhatsApp contact."
 orden: 4
-estado: entregado
-stack: [HTML, CSS, design]
-enlaces: []
+estado: produccion
+stack: [HTML, CSS, JavaScript, design]
+enlaces:
+  - etiqueta: juridicadelsur.org
+    url: https://juridicadelsur.org/
+    tipo: vivo
 ---

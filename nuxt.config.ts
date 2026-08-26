@@ -90,11 +90,11 @@ export default defineNuxtConfig({
     correoRemitente: ''
   },
 
-  // Las páginas se prerenderizan igual; el preset `vercel` (y no
-  // `vercel-static`) es lo que permite además desplegar /api/contacto como
-  // función. Sin él, el formulario no tendría dónde enviarse.
+  // Las páginas se prerenderizan igual; el preset `netlify` es lo que además
+  // empaqueta /api/contacto como Netlify Function. Con un preset estático el
+  // formulario no tendría dónde enviarse.
   nitro: {
-    preset: 'vercel',
+    preset: 'netlify',
     prerender: { crawlLinks: true, routes: ['/', '/en'] }
   },
 

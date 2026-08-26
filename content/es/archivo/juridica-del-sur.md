@@ -1,8 +1,11 @@
 ---
 titulo: Consultoría Jurídica Patrimonial del Sur
-resumen: Dos propuestas de dirección visual para un despacho jurídico, entregadas como maquetas HTML navegables en vez de imágenes planas — el cliente compara moviéndose por la página real. Una institucional cálida y otra andina moderna, cada una con su paleta y su par tipográfico argumentados.
+resumen: "Sitio de un despacho de derecho civil e inmobiliario en Pasto, con dominio propio y en producción. Empezó como dos propuestas de dirección visual entregadas en HTML navegable, no en imágenes planas: el cliente eligió moviéndose por la página real. La que quedó vive hoy con blog jurídico, temas de orientación y contacto por WhatsApp."
 orden: 4
-estado: entregado
-stack: [HTML, CSS, diseño]
-enlaces: []
+estado: produccion
+stack: [HTML, CSS, JavaScript, diseño]
+enlaces:
+  - etiqueta: juridicadelsur.org
+    url: https://juridicadelsur.org/
+    tipo: vivo
 ---

@@ -1,10 +1,11 @@
+.data
+dist
+.DS_Store
+.env
+*.log
+.netlify
 node_modules
 .nuxt
 .output
-.data
-dist
-.env
-.DS_Store
-*.log
-.vercel
 public/capturas/_prueba*
+.vercel
