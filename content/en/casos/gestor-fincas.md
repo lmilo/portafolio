@@ -22,6 +22,12 @@ enlaces:
     url: https://gestor-fincas.onrender.com
     tipo: vivo
     duerme: true
+capturas:
+  - archivo: gestor-fincas-paseos.jpg
+    alt: "A list of trips with dates, the chosen house, how many people are going, team size and status; one carries a shared label"
+    pie: "Your own trips and the ones somebody shared with you, in one list. The shared label is the multi-user part. Names are changed."
+    url: gestor-fincas.onrender.com/paseos
+    ratio: 1532 / 802
 ---
 
 > **Context.** A *finca* is a rented country house — the standard way a group of
