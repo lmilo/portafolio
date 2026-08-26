@@ -65,8 +65,8 @@ espaciado.
 │                                                       │
 │  DESARROLLADOR FULLSTACK · MEDELLÍN                   │  rótulo
 │                                                       │
-│  Construyo sistemas donde la                          │  display-xl
-│  regla de negocio es el                               │  Fraunces
+│  CONSTRUYO SISTEMAS DONDE LA                          │  display-xl
+│  REGLA DE NEGOCIO es el                               │  Archivo 800
 │  problema difícil.                                    │
 │                                                       │
 │  Dos párrafos cortos: qué hace y qué lo distingue.    │  medida-ancha

@@ -83,7 +83,8 @@ aparezca la tentación de simplificar:
 - [ ] El inglés está completo, no solo la interfaz
 
 **Tipografía**
-- [ ] Fraunces aparece solo en titulares de página y de caso
+- [ ] El display en versales aparece solo en titulares: nunca en cuerpo de texto
+- [ ] Ninguna sombra lleva desenfoque; ningún borde baja de 2px
 - [ ] Ningún texto por debajo de 13 px
 - [ ] La prosa no pasa de 68 caracteres por línea
 - [ ] Las cifras usan `tabular-nums` donde se comparan en columna

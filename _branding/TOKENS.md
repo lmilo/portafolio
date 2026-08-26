@@ -50,9 +50,9 @@ tracking positivo amplio.
 
 | Token | Tamaño | Familia | Para qué |
 |---|---|---|---|
-| `display-xl` | 3.5–4.5rem (fluido) | Fraunces 600 | Titular de la home |
-| `display-l` | 2.5–3.25rem (fluido) | Fraunces 600 | Titular de caso |
-| `display-m` | 1.75rem | Fraunces 600 | Títulos de sección |
+| `display-xl` | 2.5–5.5rem (fluido) | Archivo 800, `wdth` 112, versales | Titular de la home |
+| `display-l` | 2–3.25rem (fluido) | Archivo 800, versales | Titular de caso |
+| `display-m` | 1.5rem | Archivo 800, `wdth` 105, versales | Títulos de sección |
 | `titulo` | 1.25rem | Plex Sans 600 | Subtítulos dentro de un caso |
 | `cuerpo` | 1rem / 1.65 | Plex Sans 400 | Prosa |
 | `cuerpo-guia` | 1.125rem / 1.7 | Plex Sans 400 | Párrafo de entrada del caso |
@@ -170,3 +170,30 @@ elementos: un stagger largo se siente lento, no elegante.
 implementado en `main.css`, no opcional. Y el `scroll-behavior: smooth` está dentro
 de `prefers-reduced-motion: no-preference`, no al revés: se activa para quien no
 pidió menos movimiento, en vez de activarse siempre y desactivarse después.
+
+
+---
+
+## 6. Brutalismo: las piezas del sistema
+
+La forma es dura; el movimiento no. Esa combinación es la que hace usable el
+neobrutalismo en vez de hostil.
+
+| Pieza | Qué es |
+|---|---|
+| `.bloque` | Borde de 2px y sombra desplazada de 5px **sin desenfoque** |
+| `.pulsable` | Lo mismo, y al pulsar cae sobre su propia sombra: `translate(5px, 5px)` y sombra a cero |
+| `.etiqueta` | La unidad más pequeña: borde de 2px, mono en versalitas |
+| `.cinta` | Marquesina de datos. Se detiene al pasar por encima; con `reduced-motion` pasa a lista desplazable |
+| `.reticula` | Retícula de plano técnico, desvanecida con máscara radial |
+| `.cinta-rayada` | Banda diagonal de señalética industrial |
+
+**El radio es cero** en casi todo. Las esquinas redondeadas pertenecen a la app
+amable genérica, que es anti-tono declarado.
+
+**En oscuro la sombra desplazada se dibuja en blanco** (`--linea-fuerte`), no en
+negro: sobre un fondo casi negro una sombra oscura no existe.
+
+**Curvas:** `--ease-sal` para entradas y salidas, `--ease-entre-sal` para
+desplazamientos en pantalla. `ease-in` no aparece en ningún sitio: empieza lento
+justo en el momento que el ojo más mira.
