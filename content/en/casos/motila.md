@@ -21,6 +21,12 @@ stack:
   - Docker Compose
 # PENDIENTE: ver la nota en la versión en español.
 enlaces: []
+capturas:
+  - archivo: motila-reserva.jpg
+    alt: A barbershop's public booking page, with the service list and prices on the left and the booking summary on the right
+    pie: What the client sees. They pick services, see real availability and book without creating an account. The shop name is changed — this is the test shop.
+    url: motila.onrender.com/b/la-70
+    ratio: 1559 / 784
 ---
 
 A barbershop doesn't lose money when the system goes down. It loses money when two

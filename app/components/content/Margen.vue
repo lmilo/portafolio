@@ -12,8 +12,9 @@
 
 <template>
   <aside
-    class="my-6 border-l-2 border-acento pl-4
-           lg:absolute lg:right-0 lg:my-0 lg:w-56 lg:border-l lg:pl-5
+    class="my-6 rounded-sm bg-acento-tenue px-4 py-3
+           lg:absolute lg:right-0 lg:my-0 lg:w-56 lg:bg-transparent lg:px-0 lg:py-0
+           lg:border-l lg:border-linea-fuerte lg:pl-5
            lg:translate-x-[calc(100%+2rem)]"
   >
     <div class="mono text-acento [&>p]:mt-0 [&>p+p]:mt-3 [&>p:not(:first-child)]:text-tinta-tenue">

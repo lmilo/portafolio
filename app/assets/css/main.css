@@ -76,11 +76,16 @@
   --color-exito: var(--exito);
   --color-aviso: var(--aviso);
 
-  --font-display: 'Fraunces', ui-serif, Georgia, serif;
-  --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+  --font-display: 'Archivo Expanded', 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Martian Mono', ui-monospace, 'SF Mono', monospace;
 
   --shadow-tarjeta: var(--sombra);
+
+  /* Curvas fuertes. `ease-in` no aparece: empieza lento justo en el momento
+     que el ojo más mira, y hace que la interfaz se sienta perezosa. */
+  --ease-sal: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-entre-sal: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 @layer base {
@@ -112,31 +117,42 @@
   */
   .fuente-display {
     font-family: var(--font-display);
-    font-variation-settings: 'opsz' 120, 'SOFT' 20, 'WONK' 0;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 1.08;
+    font-variation-settings: 'wdth' 112;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.02;
+    text-transform: uppercase;
+    text-wrap: balance;
   }
 
-  .fuente-display-italica {
-    font-variation-settings: 'opsz' 120, 'SOFT' 30, 'WONK' 1;
-    font-style: italic;
+  /* La palabra que carga el titular: sin itálica editorial, con el ancho
+     llevado al extremo y el color de acento. El gesto es el ancho, no la
+     inclinación. */
+  .acentuado {
+    font-variation-settings: 'wdth' 125;
+    color: var(--acento);
   }
 
   /* Metadatos, cintas de evidencia y notas al margen. */
   .mono {
     font-family: var(--font-mono);
-    font-size: 0.8125rem;
-    letter-spacing: 0.02em;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
     font-variant-numeric: tabular-nums;
   }
 
   /* Versalitas de rótulo: el único lugar con tracking positivo amplio. */
+  /*
+    Rótulo. Se reserva para etiquetas de dato dentro de un bloque, NO como
+    antetítulo encima de cada sección: repetir una etiqueta en versalitas sobre
+    cada heading es andamiaje, no voz.
+  */
   .rotulo {
     font-family: var(--font-mono);
     font-size: 0.6875rem;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.06em;
     color: var(--tinta-tenue);
   }
 
@@ -190,9 +206,10 @@
 
   .prosa-caso :where(h2) {
     font-family: var(--font-display);
-    font-variation-settings: 'opsz' 40, 'SOFT' 20, 'WONK' 0;
-    font-weight: 600;
-    font-size: 1.75rem;
+    font-variation-settings: 'wdth' 105;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.5rem;
     line-height: 1.2;
     letter-spacing: -0.015em;
     color: var(--tinta);
@@ -302,4 +319,153 @@
   .prosa-caso :where(td):first-child { color: var(--tinta); }
 
   .prosa-caso > :first-child > :first-child { margin-top: 0; }
+}
+
+/*
+  ATMÓSFERA — «el banco de pruebas»
+  ---------------------------------
+  El diagnóstico del cliente fue certero: texto sobre fondo liso, sin una sola
+  forma ni textura, es la firma del portafolio generado a máquina. Lo que sigue
+  no es decoración: es lo que hace que la página tenga profundidad y lugar.
+
+  Se resuelve con gradientes y máscaras CSS, sin una sola imagen de stock —
+  una foto genérica de "developer at laptop" agravaría exactamente el problema
+  que estamos arreglando.
+*/
+@layer components {
+  /*
+    Retícula de plano técnico. 32px, líneas de menos de un 4% de opacidad:
+    a plena luz casi no se ve, pero le quita al fondo la planitud de "div con
+    background-color". Se desvanece hacia abajo con una máscara para que no
+    compita con el contenido.
+  */
+  .reticula {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .reticula::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, var(--linea) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--linea) 1px, transparent 1px);
+    background-size: 32px 32px;
+    opacity: 0.35;
+    -webkit-mask-image: radial-gradient(120% 90% at 50% 0%, #000 25%, transparent 75%);
+    mask-image: radial-gradient(120% 90% at 50% 0%, #000 25%, transparent 75%);
+  }
+
+  /*
+    Halo de latón detrás del titular. Da un centro de gravedad luminoso al
+    hero, que es lo que separa una portada de una entrada de blog.
+  */
+  .halo-laton::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset-block-start: -18rem;
+    inset-inline-start: -14rem;
+    inline-size: 46rem;
+    block-size: 46rem;
+    pointer-events: none;
+    background: radial-gradient(
+      circle,
+      color-mix(in oklab, var(--acento) 16%, transparent) 0%,
+      transparent 62%
+    );
+  }
+
+  :root .halo-laton::after {
+    background: radial-gradient(
+      circle,
+      color-mix(in oklab, var(--acento) 9%, transparent) 0%,
+      transparent 62%
+    );
+  }
+
+  /*
+    Grano. Una capa de ruido SVG a muy baja opacidad rompe la uniformidad
+    digital de los planos grandes. Es el detalle que hace que un fondo oscuro
+    se lea como material y no como #0B1015.
+  */
+  .grano::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.028;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Regla de escala: marca de plano técnico para los bordes de sección. */
+  .escala {
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--linea-fuerte) 0 1px,
+      transparent 1px 8px
+    );
+    block-size: 1px;
+    opacity: 0.5;
+  }
+
+  /*
+    Cifra medida. El número que vende va en Fraunces al tamaño de un titular,
+    con las cifras tabulares para que una columna de datos no baile.
+  */
+  .cifra {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    color: var(--tinta);
+  }
+}
+
+/*
+  APARICIÓN AL ENTRAR EN PANTALLA
+  Un solo gesto, corto y con curva de salida exponencial. Nada de rebotes ni
+  de recorridos largos: el contenido llega, no actúa.
+*/
+@layer utilities {
+  /*
+    El contenido NUNCA arranca oculto en el HTML. La clase `js-animar` la pone
+    el propio script al montar, así que si el JavaScript falla, no carga o el
+    observer no existe, la página se ve entera — simplemente sin animación.
+    Ocultar con CSS y confiar en JS para revelar convierte cualquier fallo de
+    script en una página en blanco.
+  */
+  .js-animar .revelar {
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 420ms var(--ease-sal),
+      transform 420ms var(--ease-sal);
+    transition-delay: var(--retraso, 0ms);
+  }
+
+  .js-animar .revelar[data-visible='true'] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* En táctil el hover se dispara al tocar: los desplazamientos de hover solo
+   se activan donde hay un puntero fino de verdad. */
+@media not all and (hover: hover) and (pointer: fine) {
+  .group:hover .group-hover\:translate-x-1 { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .revelar {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .grano::after { display: none; }
 }

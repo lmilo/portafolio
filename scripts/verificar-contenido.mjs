@@ -68,11 +68,18 @@ for (const ruta of archivosMd(RAIZ)) {
     fallos.push(`${rel}: estado "${fm.estado}" no es uno de ${ESTADOS.join(', ')}`)
   }
 
-  // La causa raíz, detectada directamente: un escalar con ": " sin entrecomillar.
-  for (const clave of ['titulo', 'resumen', 'gancho', 'cliente']) {
-    const v = fm[clave]
-    if (typeof v === 'string' && v && !/^["']/.test(v) && v.includes(': ')) {
-      fallos.push(`${rel}: "${clave}" lleva ": " sin comillas — YAML lo parte`)
+  // La causa raíz, detectada directamente sobre el texto: un escalar con ": "
+  // sin entrecomillar. Se revisa TODO el frontmatter línea a línea, no solo las
+  // claves de primer nivel: la segunda vez que apareció fue dentro de
+  // `capturas:`, en un `pie:`, y el chequeo por clave no lo veía.
+  const cuerpoFm = texto.split('\n').slice(1, texto.split('\n').findIndex((l, i) => i > 0 && l.trim() === '---'))
+  for (const [n, linea] of cuerpoFm.entries()) {
+    const m = linea.match(/^(\s*-?\s*)([a-zA-Z_]+):\s+(.+)$/)
+    if (!m) continue
+    const valor = m[3].trim()
+    if (/^["'|>[{]/.test(valor)) continue
+    if (valor.includes(': ')) {
+      fallos.push(`${rel}:${n + 2}: "${m[2]}" lleva ": " sin comillas — YAML lo parte en silencio`)
     }
   }
 }

@@ -10,34 +10,37 @@
 
 ---
 
-## 1. Tipografía: tres familias, tres oficios
+## 1. Tipografía: una familia con dos anchos, más una mono de datos
 
 | Rol | Familia | Dónde |
 |---|---|---|
-| Display | **Fraunces** 600/700, variable | Titulares de página y de caso, y solo ahí |
-| Cuerpo e interfaz | **IBM Plex Sans** 400/500/600 | Toda la prosa, botones, navegación |
-| Metadatos | **IBM Plex Mono** 400/500 | Cinta de evidencia, notas al margen, stack, rótulos |
+| Display | **Archivo Expanded** 800, en mayúsculas | Titulares de página, de caso y de sección |
+| Cuerpo e interfaz | **Archivo** 400/500/600 | Toda la prosa, botones, navegación |
+| Mediciones | **Martian Mono** 400/500/600 | Cifras, cinta de evidencia, notas al margen, etiquetas |
 
-**Por qué Plex Sans y Plex Mono juntas.** Comparten esqueleto, proporciones y
-tensión: los metadatos en mono y el cuerpo en sans se leen como la misma voz en dos
-registros, no como dos fuentes peleando. Plex nació en Bold Monday para IBM, para
-documentación técnica y producto de ingeniería — que es exactamente el contexto de
-este sitio. Y tiene humanidad donde importa: la `a` de doble piso y la `g` con cola
-abierta evitan la frialdad de una grotesca neutra.
+**Por qué Archivo.** Es de Omnibus-Type, fundición de Buenos Aires, y nació para
+señalética y formularios de uso público en Latinoamérica. Tiene eje de ancho
+variable, así que **una sola familia** cubre display y cuerpo: el titular va en
+Expanded a peso 800 y el cuerpo en ancho normal a 400. Un tipo bien elegido con
+contraste fuerte de peso y ancho tiene más voz que un par tímido de dos familias
+que compiten.
 
-**Por qué Fraunces en display.** Es variable con ejes `opsz`, `SOFT` y `WONK`. En
-tamaños grandes y sobre fondo oscuro, una didona de alto contraste se afina y se
-rompe; Fraunces con `opsz 120` engrosa las astas y aguanta. El eje `WONK` activa las
-formas peculiares de la itálica, que es donde la fuente tiene voz propia — se usa
-solo ahí, para acentuar una palabra dentro de un titular.
+Que sea una fundición latinoamericana, diseñando para documentos de uso masivo en
+la región, encaja con el sujeto: sistemas para negocios colombianos.
 
-**Por qué NO Inter en cuerpo**, que sería la elección por defecto: es *la* fuente de
-interfaz genérica de esta década, y por lo tanto justo el aspecto anónimo del que
-esta dirección se aparta. Se descartó a propósito.
+**Por qué Martian Mono.** Las mediciones son la mitad del argumento del sitio y
+necesitan cifras tabulares con carácter propio. Es ancha, técnica y no es ninguna
+de las mono que salen por defecto.
 
-**Control de riesgo.** Fraunces tiene carácter fuerte. Por eso su alcance está
-limitado por regla, no por criterio del momento: **titulares de página y de caso, y
-nada más.** Nunca en cuerpo, nunca en botones, nunca en tablas.
+**Por qué NO Fraunces ni IBM Plex**, que era la elección anterior: son de las
+primeras que se proponen por reflejo, y producen la misma página en todas partes.
+Ver la nota de dirección revisada en `BRAND.md` §2.
+
+**Control de riesgo.** El display va en **mayúsculas**, que solo funciona en
+tramos cortos. Regla: titulares de página, de caso y de sección, nunca más de
+unas pocas palabras, y **jamás en cuerpo de texto**. Martian Mono es ancha: su
+tamaño base baja a 12px y el tracking a `-0.02em` para que las etiquetas no
+desborden.
 
 ### Escala
 

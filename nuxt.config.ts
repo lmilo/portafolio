@@ -19,9 +19,15 @@ export default defineNuxtConfig({
 
   fonts: {
     families: [
-      { name: 'Fraunces', provider: 'google', weights: [400, 600, 700], styles: ['normal', 'italic'] },
-      { name: 'IBM Plex Sans', provider: 'google', weights: [400, 500, 600] },
-      { name: 'IBM Plex Mono', provider: 'google', weights: [400, 500] }
+      // Archivo (Omnibus-Type, Buenos Aires) nació para señalética y formularios
+      // de uso público en Latinoamérica. Es una sola familia con eje de ancho:
+      // el display va en Expanded pesado, el cuerpo en ancho normal. Un solo
+      // tipo con contraste de peso y ancho tiene más voz que un par tímido.
+      { name: 'Archivo', provider: 'google', weights: [400, 500, 600, 700, 800] },
+      { name: 'Archivo Expanded', provider: 'google', weights: [600, 700, 800] },
+      // Martian Mono para las mediciones: cifras tabulares, formas técnicas,
+      // y no es ninguna de las mono que salen por defecto.
+      { name: 'Martian Mono', provider: 'google', weights: [400, 500, 600] }
     ]
   },
 

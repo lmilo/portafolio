@@ -21,6 +21,16 @@ Anti-tono: agencia digital, "transformamos tu idea en realidad", contadores anim
 barras de habilidad, hero con foto grande y saludo, emojis en los títulos, terminal
 falsa con prompt parpadeante.
 
+**Y el anti-tono que costó una versión entera:** display serif en itálica, rótulos
+mono en versalitas encima de cada sección, separadores de regla y cero imágenes.
+Es la familia estética más saturada de 2026 y se lee de inmediato como generada a
+máquina. Si el diseño empieza a derivar hacia ahí otra vez, es la señal de que se
+está eligiendo por reflejo. Ver `BRAND.md` §2.
+
+**Regla dura que salió de ahí:** una página que carga todo su peso visual solo con
+tipografía sobre fondo liso es un fallo, no una decisión de restraint. Los
+productos tienen que verse funcionando.
+
 ---
 
 ## 2. Referencias (descritas)

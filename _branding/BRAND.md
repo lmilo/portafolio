@@ -33,7 +33,30 @@ detrás y por lo tanto no entra. "Dos clientes reservan el mismo slot al mismo t
 uno gana y el otro recibe 409, y la garantía es un `EXCLUDE USING gist`" sí entra,
 porque cualquiera puede ir a verlo.
 
-## 2. Concepto: EL CUADERNO DE INGENIERÍA
+## 2. Concepto: EL BANCO DE PRUEBAS
+
+> **Dirección revisada (2026-08-25).** La primera versión de este documento fijó
+> «el cuaderno de ingeniería»: serif de titulares en itálica, rótulos mono en
+> versalitas sobre cada sección, separadores de regla, cero imágenes. El cliente
+> vio el resultado y dijo que «grita página genérica de IA». Tenía razón, y la
+> razón concreta es que esa combinación —display serif itálico + etiquetas mono +
+> reglas + monocromo sin imágenes— es **la familia estética más saturada de 2026**
+> en superficies de marca. No estaba mal ejecutada: era el reflejo por defecto.
+>
+> Con ella cayeron las tres tipografías originales. Fraunces, IBM Plex Sans e IBM
+> Plex Mono son las que salen primero por defecto, y por eso mismo producen
+> monocultura.
+>
+> Lo que **no** cambió: la regla de la evidencia (§1), el latón sobre fondo
+> profundo, y el hecho de que el sitio bifurca en tres caminos. Eso venía del
+> problema, no del reflejo.
+
+El registro ya no es el de un libro. Es el de un **banco de trabajo con los
+instrumentos encima y las mediciones a la vista**: señalética industrial, cifras
+tabulares, retícula de plano técnico. Grotesca ancha en mayúsculas donde antes
+había serif itálica.
+
+### Lo que se conserva del cuaderno
 
 **La ventaja real de Camilo no es que construye software. Es que deja registro de
 por qué lo construyó así.**

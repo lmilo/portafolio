@@ -26,7 +26,7 @@ enlaces:
 capturas:
   - archivo: snapitbella-home.jpg
     alt: Portada de la tienda con el titular «Stop adjusting your loupes all day» junto a una comparación antes y después de la correa puesta sobre una bata clínica
-    pie: La portada rediseñada. El antes y después resuelve en una imagen lo que el texto no puede explicar: cómo funciona el mecanismo.
+    pie: "La portada rediseñada. El antes y después resuelve en una imagen lo que el texto no puede explicar: cómo funciona el mecanismo."
     url: snapitbella-preview.netlify.app
     ratio: 1559 / 784
 ---
