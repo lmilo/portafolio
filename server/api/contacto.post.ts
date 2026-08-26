@@ -67,28 +67,38 @@ export default defineEventHandler(async (event) => {
   })
 
   const asuntos: Record<string, string> = {
-    empleo: 'Vacante',
-    proyecto: 'Proyecto a medida',
-    producto: 'Alquiler de sistema',
-    otro: 'Consulta'
+    empleo: 'una vacante',
+    proyecto: 'un proyecto a medida',
+    producto: 'alquilar un sistema',
+    otro: 'una consulta'
   }
 
   await transporte.sendMail({
     // El remitente TIENE que ser una dirección verificada en el proveedor. Con
     // el login SMTP en su lugar, Brevo acepta la conexión, devuelve éxito y
     // descarta el mensaje en silencio: no aparece ni en los logs de la cuenta.
-    from: `"Portafolio · ${nombre}" <${correoRemitente || correoDestino}>`,
+    from: `"${nombre} · portafolio" <${correoRemitente || correoDestino}>`,
     to: correoDestino || smtpUsuario,
     // replyTo y no from: poner la dirección de quien escribe en el remitente
     // hace que SPF y DKIM no cuadren y el correo acabe en spam.
     replyTo: `"${nombre}" <${correo}>`,
-    subject: `[${asuntos[asunto]}] ${nombre}`,
+    // Asunto en lenguaje natural, sin corchetes de sistema: Gmail lee
+    // `[ETIQUETA]` como envío automatizado y eso empuja hacia Promociones.
+    subject: `${nombre} escribió sobre ${asuntos[asunto]}`,
+    headers: {
+      // Referencia única por mensaje: evita que Gmail agrupe en un mismo hilo
+      // mensajes de personas distintas por tener el asunto parecido.
+      'X-Entity-Ref-ID': `contacto-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`
+    },
+    // Solo texto plano, sin HTML ni enlaces: es lo que más se parece a un
+    // correo escrito por una persona, que es exactamente lo que es.
     text: [
-      `Nombre:  ${nombre}`,
-      `Correo:  ${correo}`,
-      `Asunto:  ${asuntos[asunto]}`,
+      `${nombre} escribió desde el portafolio sobre ${asuntos[asunto]}.`,
       '',
-      mensaje
+      mensaje,
+      '',
+      '---',
+      `Responde a este correo y le llega a ${correo}`
     ].join('\n')
   })
 
