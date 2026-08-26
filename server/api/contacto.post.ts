@@ -53,7 +53,7 @@ export default defineEventHandler(async (event) => {
   if (web) return { ok: true }
 
   const config = useRuntimeConfig()
-  const { smtpHost, smtpPuerto, smtpUsuario, smtpClave, correoDestino } = config
+  const { smtpHost, smtpPuerto, smtpUsuario, smtpClave, correoDestino, correoRemitente } = config
 
   if (!smtpHost || !smtpUsuario || !smtpClave) {
     throw createError({ statusCode: 503, data: { motivo: 'sin-configurar' } })
@@ -74,7 +74,10 @@ export default defineEventHandler(async (event) => {
   }
 
   await transporte.sendMail({
-    from: `"Portafolio" <${smtpUsuario}>`,
+    // El remitente TIENE que ser una dirección verificada en el proveedor. Con
+    // el login SMTP en su lugar, Brevo acepta la conexión, devuelve éxito y
+    // descarta el mensaje en silencio: no aparece ni en los logs de la cuenta.
+    from: `"Portafolio · ${nombre}" <${correoRemitente || correoDestino}>`,
     to: correoDestino || smtpUsuario,
     // replyTo y no from: poner la dirección de quien escribe en el remitente
     // hace que SPF y DKIM no cuadren y el correo acabe en spam.

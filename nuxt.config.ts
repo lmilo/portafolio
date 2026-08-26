@@ -85,7 +85,9 @@ export default defineNuxtConfig({
     smtpPuerto: '587',
     smtpUsuario: '',
     smtpClave: '',
-    correoDestino: ''
+    correoDestino: '',
+    // Dirección verificada en el proveedor. NO es el login SMTP.
+    correoRemitente: ''
   },
 
   // Las páginas se prerenderizan igual; el preset `vercel` (y no
