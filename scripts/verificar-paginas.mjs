@@ -14,11 +14,11 @@ const base = (process.argv[2] || 'http://localhost:3000').replace(/\/$/, '')
 // [ruta, qué tiene que aparecer, cuántas veces como mínimo]
 const ESPERADO = [
   ['/',                    /href="\/trabajo\/[a-z-]+"/g, 3],
-  ['/',                    /capturas\/[a-z0-9-]+\.jpg/g, 1],
+  ['/',                    /(?:capturas\/|capturas%2F)[a-z0-9-]+\.jpg/gi, 1],
   ['/trabajo',             /href="\/trabajo\/[a-z-]+"/g, 6],
-  ['/trabajo',             /capturas\/[a-z0-9-]+\.jpg/g, 6],
-  ['/trabajo/motila',      /capturas\/motila-reserva\.jpg/g, 1],
-  ['/trabajo/recargo',     /capturas\/recargo-[a-z]+\.jpg/g, 4],
+  ['/trabajo',             /(?:capturas\/|capturas%2F)[a-z0-9-]+\.jpg/gi, 6],
+  ['/trabajo/motila',      /(?:capturas\/|capturas%2F)motila-reserva\.jpg/gi, 1],
+  ['/trabajo/recargo',     /(?:capturas\/|capturas%2F)recargo-[a-z]+\.jpg/gi, 4],
   ['/servicios',           /<h1/g, 1],
   ['/productos',           /<h1/g, 1],
   ['/contacto',            /campo-mensaje/g, 1],

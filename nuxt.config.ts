@@ -72,7 +72,9 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: process.env.NUXT_PUBLIC_SITE_URL || 'https://camilorincon.dev',
+    // Dominio actual. Cuando haya uno propio, se cambia aquí y en la variable
+    // NUXT_PUBLIC_SITE_URL de Netlify.
+    url: process.env.NUXT_PUBLIC_SITE_URL || 'https://camilorc.netlify.app',
     name: 'Camilo Rincón',
     defaultLocale: 'es'
   },
