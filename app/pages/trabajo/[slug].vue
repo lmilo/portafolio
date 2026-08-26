@@ -44,7 +44,7 @@ useSeoMeta({
       class="pulsable boton-hueco mono mt-8 inline-flex px-4 py-2"
     >← {{ t('comun.volverTrabajo') }}</NuxtLink>
 
-    <header class="border-b-2 border-linea-fuerte py-10 md:py-14">
+    <header class="border-b border-vidrio-borde py-10 md:py-14">
       <div class="flex flex-wrap items-center justify-between gap-3">
         <span class="rotulo">{{ String(caso.orden).padStart(2, '0') }}</span>
         <EstadoProyecto :estado="caso.estado" />
@@ -80,7 +80,7 @@ useSeoMeta({
       <ContentRenderer :value="caso" />
     </div>
 
-    <section v-if="resto.length" class="border-t-2 border-linea-fuerte py-10">
+    <section v-if="resto.length" class="border-t border-vidrio-borde py-10">
       <!-- Si todo lo que queda son pantallas de teléfono, van en fila: apiladas
            gastan una pantalla cada una y se pierde que son un mismo recorrido. -->
       <div :class="soloMoviles ? 'grid gap-6 sm:grid-cols-2 lg:grid-cols-3' : ''">
@@ -93,7 +93,7 @@ useSeoMeta({
       </div>
     </section>
 
-    <footer class="border-t-2 border-linea-fuerte py-10">
+    <footer class="border-t border-vidrio-borde py-10">
       <h2 class="rotulo">{{ t('comun.stack') }}</h2>
       <p class="mono mt-3 text-tinta-media">{{ caso.stack.join(' · ') }}</p>
 
@@ -102,12 +102,12 @@ useSeoMeta({
       </div>
       <!-- La ausencia de enlace se explica. Sin esto se lee como un olvido, y
            lo que es en realidad es una decisión sobre datos de terceros. -->
-      <p v-else class="mono mt-8 flex max-w-lg items-start gap-2 border-2 border-linea-fuerte p-4">
+      <p v-else class="mono mt-8 flex max-w-lg items-start gap-2 border border-vidrio-borde p-4">
         <span aria-hidden="true">🔒</span>
         <span>{{ t('comun.sinEnlace') }}</span>
       </p>
 
-      <nav class="mt-14 flex flex-wrap justify-between gap-4 border-t-2 border-linea-fuerte pt-8">
+      <nav class="mt-14 flex flex-wrap justify-between gap-4 border-t border-vidrio-borde pt-8">
         <NuxtLink
           v-if="data?.anterior"
           :to="localePath(rutaCaso(data.anterior.path))"

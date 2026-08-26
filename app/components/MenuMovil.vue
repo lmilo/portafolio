@@ -88,7 +88,7 @@ async function abrir() {
           role="dialog"
           aria-modal="true"
         >
-          <div class="flex items-center justify-between border-b-2 border-linea-fuerte px-6 py-5">
+          <div class="flex items-center justify-between border-b border-vidrio-borde px-6 py-5">
             <span class="fuente-display text-lg">{{ perfil.iniciales }}</span>
             <button
               type="button"

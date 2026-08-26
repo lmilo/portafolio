@@ -31,36 +31,50 @@ const esMovil = computed(() => portada.value?.dispositivo === 'movil')
 
 <template>
   <article
-    class="group relative flex border-2 border-linea-fuerte bg-superficie
-           transition-[transform,box-shadow] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)]
-           hover:shadow-[6px_6px_0_var(--linea-fuerte)] md:hover:-translate-x-0.5 md:hover:-translate-y-0.5"
+    class="group relative flex overflow-hidden bg-vidrio backdrop-blur-xl
+           border border-vidrio-borde rounded-[--radio-g] shadow-suave
+           transition-[transform,box-shadow,border-color] duration-200
+           ease-[cubic-bezier(0.23,1,0.32,1)]
+           motion-safe:md:hover:-translate-y-1 hover:border-acento/40"
     :class="variante === 'ancha'
       ? ['flex-col', invertida ? 'lg:flex-row-reverse' : 'lg:flex-row']
       : 'flex-col'"
   >
-    <!-- La captura. `overflow-hidden` para que el zoom del hover no se salga
-         del borde, que en brutalismo es la pieza que no se puede romper. -->
+    <!-- La captura, con la misma barra de navegador que el mockup grande: es
+         lo que hace que todo el sitio se lea como un solo sistema y no como
+         piezas sueltas. -->
     <div
       v-if="portada"
-      class="relative shrink-0 overflow-hidden border-linea-fuerte"
+      class="relative shrink-0 overflow-hidden"
       :class="[
         variante === 'ancha'
-          ? (invertida ? 'lg:w-[46%] border-b-2 lg:border-b-0 lg:border-s-2' : 'lg:w-[46%] border-b-2 lg:border-b-0 lg:border-e-2')
-          : 'border-b-2',
-        esMovil ? 'bg-hundido' : ''
+          ? (invertida ? 'lg:w-[46%] lg:order-last' : 'lg:w-[46%]')
+          : '',
+        esMovil ? 'bg-hundido/60' : ''
       ]"
     >
-      <NuxtImg
-        :src="`/capturas/${portada.archivo}`"
-        :alt="portada.alt"
-        loading="lazy"
-        format="webp"
-        sizes="100vw md:50vw lg:600px"
-        class="block w-full transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)]
-               motion-safe:group-hover:scale-[1.03]"
-        :class="esMovil ? 'object-contain object-top' : 'object-cover object-top'"
-        :style="{ aspectRatio: variante === 'ancha' ? '16 / 11' : '16 / 10' }"
-      />
+      <div class="p-3 pb-0">
+        <div class="vidrio overflow-hidden p-1.5 pb-0">
+          <div v-if="!esMovil" class="flex items-center gap-1.5 px-1.5 pb-1.5">
+            <span class="flex gap-1" aria-hidden="true">
+              <span class="size-1.5 rounded-full bg-rosa/70" />
+              <span class="size-1.5 rounded-full bg-aviso/70" />
+              <span class="size-1.5 rounded-full bg-exito/70" />
+            </span>
+          </div>
+          <NuxtImg
+            :src="`/capturas/${portada.archivo}`"
+            :alt="portada.alt"
+            loading="lazy"
+            format="webp"
+            sizes="100vw md:50vw lg:600px"
+            class="block w-full rounded-t-[8px] transition-transform duration-500
+                   ease-[cubic-bezier(0.23,1,0.32,1)] motion-safe:group-hover:scale-[1.03]"
+            :class="esMovil ? 'object-contain object-top' : 'object-cover object-top'"
+            :style="{ aspectRatio: variante === 'ancha' ? '16 / 11' : '16 / 10' }"
+          />
+        </div>
+      </div>
     </div>
 
     <div class="flex flex-1 flex-col p-5 md:p-6">

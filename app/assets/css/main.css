@@ -17,66 +17,73 @@
 :root {
   color-scheme: light;
 
-  --fondo: oklch(0.985 0.008 100);
+  --fondo: oklch(0.98 0.01 275);
   --superficie: oklch(1 0 0);
-  --hundido: oklch(0.955 0.012 100);
+  --hundido: oklch(0.955 0.018 275);
 
-  --tinta: oklch(0.16 0.01 250);
-  --tinta-media: oklch(0.4 0.012 250);
-  --tinta-tenue: oklch(0.48 0.012 250);
+  --tinta: oklch(0.2 0.04 275);
+  --tinta-media: oklch(0.43 0.045 275);
+  --tinta-tenue: oklch(0.51 0.045 275);
 
-  --linea: oklch(0.88 0.01 250);
-  --linea-fuerte: oklch(0.16 0.01 250);
+  --linea: oklch(0.9 0.02 275);
+  --linea-fuerte: oklch(0.64 0.04 275);
 
-  /* El amarillo es fondo de bloque. Como texto sobre papel no contrasta. */
-  --acento: oklch(0.87 0.185 100);
-  --acento-fg: oklch(0.15 0.02 100);
-  /* Texto interactivo: en claro baja a ámbar oscuro para llegar a 4.5:1. */
-  --enlace: oklch(0.45 0.13 60);
-  --enlace-hover: oklch(0.38 0.12 60);
+  --violeta: oklch(0.48 0.2 300);
+  --cian: oklch(0.52 0.13 205);
+  --rosa: oklch(0.54 0.2 350);
 
-  --cian: oklch(0.83 0.145 205);
-  --cian-fg: oklch(0.15 0.02 205);
-  --magenta: oklch(0.75 0.18 8);
-  --magenta-fg: oklch(0.16 0.03 8);
+  --acento: oklch(0.48 0.19 285);
+  --acento-hover: oklch(0.42 0.18 285);
+  --acento-fg: oklch(0.99 0.005 285);
 
-  --exito: oklch(0.86 0.21 145);
-  --exito-fg: oklch(0.15 0.03 145);
-  --aviso: oklch(0.76 0.185 45);
-  --aviso-fg: oklch(0.15 0.03 45);
+  --exito: oklch(0.47 0.13 160);
+  --aviso: oklch(0.52 0.14 60);
 
-  --borde-ancho: 2px;
-  --desplazamiento: 5px;
+  /* Vidrio: en claro la superficie es casi opaca, porque un blanco muy
+     translúcido sobre fondo claro no se distingue del fondo. */
+  --vidrio: oklch(1 0 0 / 0.72);
+  --vidrio-borde: oklch(0.2 0.04 275 / 0.1);
+  --sombra-suave: 0 1px 2px oklch(0.2 0.04 275 / 0.06), 0 12px 32px oklch(0.2 0.04 275 / 0.08);
+  --resplandor: 0 0 0 transparent;
+
+  --radio: 14px;
+  --radio-g: 22px;
+  --opacidad-aurora: 0.5;
 }
 
 .dark {
   color-scheme: dark;
 
-  --fondo: oklch(0.145 0.006 250);
-  --superficie: oklch(0.2 0.008 250);
-  --hundido: oklch(0.1 0.005 250);
+  --fondo: oklch(0.155 0.035 275);
+  --superficie: oklch(0.225 0.035 275);
+  --hundido: oklch(0.115 0.03 275);
 
-  --tinta: oklch(0.97 0 0);
-  --tinta-media: oklch(0.8 0.008 90);
-  --tinta-tenue: oklch(0.68 0.01 90);
+  --tinta: oklch(0.975 0.005 275);
+  --tinta-media: oklch(0.815 0.02 275);
+  --tinta-tenue: oklch(0.69 0.03 275);
 
-  --linea: oklch(0.32 0.01 250);
-  --linea-fuerte: oklch(0.97 0 0);
+  --linea: oklch(0.33 0.03 275);
+  --linea-fuerte: oklch(0.56 0.045 275);
 
-  --acento: oklch(0.87 0.185 100);
-  --acento-fg: oklch(0.15 0.02 100);
-  --enlace: oklch(0.87 0.185 100);
-  --enlace-hover: oklch(0.93 0.16 100);
+  --violeta: oklch(0.7 0.19 300);
+  --cian: oklch(0.79 0.14 205);
+  --rosa: oklch(0.74 0.18 350);
 
-  --cian: oklch(0.83 0.145 205);
-  --cian-fg: oklch(0.15 0.02 205);
-  --magenta: oklch(0.75 0.18 8);
-  --magenta-fg: oklch(0.16 0.03 8);
+  --acento: oklch(0.76 0.15 285);
+  --acento-hover: oklch(0.83 0.13 285);
+  --acento-fg: oklch(0.15 0.05 285);
 
-  --exito: oklch(0.86 0.21 145);
-  --exito-fg: oklch(0.15 0.03 145);
-  --aviso: oklch(0.76 0.185 45);
-  --aviso-fg: oklch(0.15 0.03 45);
+  --exito: oklch(0.82 0.17 160);
+  --aviso: oklch(0.79 0.15 60);
+
+  --vidrio: oklch(0.975 0.005 275 / 0.06);
+  --vidrio-borde: oklch(0.975 0.005 275 / 0.12);
+  --sombra-suave: 0 1px 2px oklch(0 0 0 / 0.3), 0 16px 40px oklch(0 0 0 / 0.35);
+  /* El resplandor solo existe en oscuro: sobre fondo claro se ve como una
+     mancha sucia, no como luz. */
+  --resplandor: 0 0 44px oklch(0.76 0.15 285 / 0.28);
+
+  --opacidad-aurora: 0.85;
 }
 
 @theme inline {
@@ -89,26 +96,26 @@
   --color-linea: var(--linea);
   --color-linea-fuerte: var(--linea-fuerte);
   --color-acento: var(--acento);
+  --color-acento-hover: var(--acento-hover);
   --color-acento-fg: var(--acento-fg);
-  --color-enlace: var(--enlace);
-  --color-enlace-hover: var(--enlace-hover);
+  --color-violeta: var(--violeta);
   --color-cian: var(--cian);
-  --color-cian-fg: var(--cian-fg);
-  --color-magenta: var(--magenta);
-  --color-magenta-fg: var(--magenta-fg);
+  --color-rosa: var(--rosa);
   --color-exito: var(--exito);
-  --color-exito-fg: var(--exito-fg);
   --color-aviso: var(--aviso);
-  --color-aviso-fg: var(--aviso-fg);
+  --color-vidrio: var(--vidrio);
+  --color-vidrio-borde: var(--vidrio-borde);
 
   --font-display: 'Archivo', ui-sans-serif, system-ui, sans-serif;
   --font-sans: 'Archivo', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'Martian Mono', ui-monospace, 'SF Mono', monospace;
 
-  /* Curvas fuertes. `ease-in` no aparece: empieza lento justo cuando el ojo
-     más mira, y hace que la interfaz se sienta perezosa. */
   --ease-sal: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-entre-sal: cubic-bezier(0.77, 0, 0.175, 1);
+
+  --radius-aurora: var(--radio);
+  --radius-aurora-g: var(--radio-g);
+  --shadow-suave: var(--sombra-suave);
 }
 
 @layer base {
@@ -125,22 +132,30 @@
     background-color: var(--fondo);
     color: var(--tinta);
     font-family: var(--font-sans);
-    font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
 
   .fuente-display {
     font-family: var(--font-display);
-    font-variation-settings: 'wdth' 112;
-    font-weight: 800;
-    letter-spacing: -0.025em;
-    line-height: 1.02;
-    text-transform: uppercase;
+    font-variation-settings: 'wdth' 100;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.06;
     text-wrap: balance;
   }
 
-  .acentuado { font-variation-settings: 'wdth' 125; color: var(--enlace); }
+  /*
+    La palabra que carga el titular va en degradado de aurora. Es el único
+    sitio del sitio donde se usa `background-clip: text`: en más de un lugar
+    deja de ser un acento y se vuelve un tic.
+  */
+  .acentuado {
+    background-image: linear-gradient(100deg, var(--violeta), var(--cian) 45%, var(--rosa));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 
   .mono {
     font-family: var(--font-mono);
@@ -151,10 +166,10 @@
   }
 
   .cifra {
-    font-family: var(--font-mono);
-    font-weight: 600;
+    font-family: var(--font-display);
+    font-weight: 700;
     font-variant-numeric: tabular-nums;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.04em;
     line-height: 1;
   }
 
@@ -162,14 +177,14 @@
     font-family: var(--font-mono);
     font-size: 0.6875rem;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     color: var(--tinta-tenue);
   }
 
-  /* Foco grueso y desplazado: en brutalismo el foco se ve, no se insinúa. */
   :focus-visible {
-    outline: 3px solid var(--enlace);
+    outline: 2px solid var(--acento);
     outline-offset: 3px;
+    border-radius: 6px;
   }
   :focus:not(:focus-visible) { outline: none; }
 
@@ -180,7 +195,6 @@
 
   img, svg, video { max-width: 100%; height: auto; }
 
-  /* z-index con nombre: nunca 999 ni 9999. */
   :root {
     --z-pegado: 10;
     --z-arriba: 20;
@@ -191,110 +205,138 @@
 
 @layer components {
   /*
-    El bloque brutalista: borde duro y sombra desplazada sin desenfoque. Al
-    pulsar, el elemento cae sobre su propia sombra — el gesto físico de un
-    botón real, no una opacidad que cambia.
+    AURORA
+    Tres manchas de color muy difuminadas sobre el fondo. `filter: blur` sobre
+    un elemento grande es caro de pintar, así que se usan gradientes radiales,
+    que el compositor resuelve sin repintar.
   */
+  .aurora {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .aurora::before {
+    content: '';
+    position: absolute;
+    inset: -20% -10% auto -10%;
+    block-size: 130%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: var(--opacidad-aurora);
+    background:
+      radial-gradient(38% 45% at 18% 22%, color-mix(in oklab, var(--violeta) 42%, transparent), transparent 70%),
+      radial-gradient(34% 40% at 78% 12%, color-mix(in oklab, var(--cian) 34%, transparent), transparent 68%),
+      radial-gradient(42% 38% at 58% 58%, color-mix(in oklab, var(--rosa) 28%, transparent), transparent 72%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 35%, transparent 92%);
+    mask-image: linear-gradient(to bottom, #000 35%, transparent 92%);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .aurora::before {
+      animation: aurora-deriva 22s ease-in-out infinite alternate;
+    }
+  }
+
+  @keyframes aurora-deriva {
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to   { transform: translate3d(-2%, 1.5%, 0) scale(1.06); }
+  }
+
+  /* Vidrio: la superficie del sistema. */
+  .vidrio {
+    background-color: var(--vidrio);
+    border: 1px solid var(--vidrio-borde);
+    border-radius: var(--radio-g);
+    backdrop-filter: blur(16px) saturate(1.3);
+    -webkit-backdrop-filter: blur(16px) saturate(1.3);
+    box-shadow: var(--sombra-suave);
+  }
+
   .bloque {
-    border: var(--borde-ancho) solid var(--linea-fuerte);
-    border-radius: 0;
-    box-shadow: var(--desplazamiento) var(--desplazamiento) 0 var(--linea-fuerte);
-    background-color: var(--superficie);
+    background-color: var(--vidrio);
+    border: 1px solid var(--vidrio-borde);
+    border-radius: var(--radio-g);
+    backdrop-filter: blur(16px) saturate(1.3);
+    -webkit-backdrop-filter: blur(16px) saturate(1.3);
+    box-shadow: var(--sombra-suave);
   }
 
   .pulsable {
-    border: var(--borde-ancho) solid var(--linea-fuerte);
-    border-radius: 0;
-    box-shadow: var(--desplazamiento) var(--desplazamiento) 0 var(--linea-fuerte);
+    border-radius: var(--radio);
+    border: 1px solid var(--vidrio-borde);
     transition:
-      transform 140ms var(--ease-sal),
-      box-shadow 140ms var(--ease-sal),
-      background-color 140ms var(--ease-sal);
+      transform 180ms var(--ease-sal),
+      box-shadow 180ms var(--ease-sal),
+      background-color 180ms var(--ease-sal),
+      border-color 180ms var(--ease-sal);
   }
 
   @media (hover: hover) and (pointer: fine) {
     .pulsable:hover {
-      transform: translate(2px, 2px);
-      box-shadow: 3px 3px 0 var(--linea-fuerte);
+      transform: translateY(-2px);
+      box-shadow: var(--sombra-suave), var(--resplandor);
+      border-color: color-mix(in oklab, var(--acento) 45%, transparent);
     }
   }
 
-  .pulsable:active {
-    transform: translate(var(--desplazamiento), var(--desplazamiento));
-    box-shadow: 0 0 0 var(--linea-fuerte);
-  }
+  .pulsable:active { transform: translateY(0) scale(0.98); }
 
   .boton-acento {
-    background-color: var(--acento);
+    background-image: linear-gradient(100deg, var(--acento), var(--violeta));
     color: var(--acento-fg);
-    font-weight: 700;
+    font-weight: 600;
+    border-color: transparent;
   }
-  .boton-cian { background-color: var(--cian); color: var(--cian-fg); font-weight: 700; }
-  .boton-magenta { background-color: var(--magenta); color: var(--magenta-fg); font-weight: 700; }
 
   .boton-hueco {
-    background-color: var(--superficie);
+    background-color: var(--vidrio);
     color: var(--tinta);
-    font-weight: 700;
-  }
-  @media (hover: hover) and (pointer: fine) {
-    .boton-hueco:hover { background-color: var(--acento); color: var(--acento-fg); }
+    font-weight: 600;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
-  /* Etiqueta de bloque plano: la unidad más pequeña del sistema. */
   .etiqueta {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
-    border: 2px solid var(--linea-fuerte);
-    padding: 0.15rem 0.5rem;
+    gap: 0.45rem;
+    border: 1px solid var(--vidrio-borde);
+    background-color: var(--vidrio);
+    border-radius: 999px;
+    padding: 0.3rem 0.75rem;
     font-family: var(--font-mono);
     font-size: 0.6875rem;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    font-weight: 600;
+    letter-spacing: 0.06em;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
-  /* Retícula de plano técnico: le quita al fondo la planitud de un color liso. */
-  .reticula { position: relative; isolation: isolate; }
-  .reticula::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background-image:
-      linear-gradient(to right, var(--linea) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--linea) 1px, transparent 1px);
-    background-size: 40px 40px;
-    -webkit-mask-image: radial-gradient(130% 95% at 50% 0%, #000 20%, transparent 78%);
-    mask-image: radial-gradient(130% 95% at 50% 0%, #000 20%, transparent 78%);
-  }
-
-  /* Banda diagonal de advertencia: señalética industrial pura. */
-  .cinta-rayada {
-    background-image: repeating-linear-gradient(
-      45deg,
-      var(--linea-fuerte) 0 8px,
-      transparent 8px 16px
+  /* Filo luminoso: una línea de degradado que separa sin cortar. */
+  .filo {
+    block-size: 1px;
+    border: 0;
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      color-mix(in oklab, var(--acento) 55%, transparent),
+      transparent
     );
-    opacity: 0.9;
   }
 
   .prosa-caso { color: var(--tinta-media); }
 
   .prosa-caso :where(h2) {
     font-family: var(--font-display);
-    font-variation-settings: 'wdth' 105;
-    font-weight: 800;
-    text-transform: uppercase;
-    font-size: 1.5rem;
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: -0.025em;
     line-height: 1.15;
     letter-spacing: -0.015em;
     color: var(--tinta);
     margin-top: 3.5rem;
     padding-top: 1.5rem;
-    border-top: var(--borde-ancho) solid var(--linea-fuerte);
+    border-top: 1px solid var(--linea);
   }
 
   .prosa-caso :where(h3) {
@@ -326,10 +368,10 @@
   .prosa-caso :where(code) {
     font-family: var(--font-mono);
     font-size: 0.8em;
-    color: var(--acento-fg);
-    background-color: var(--acento);
-    padding: 0.1em 0.35em;
-    border: 1px solid var(--linea-fuerte);
+    color: var(--acento);
+    background-color: color-mix(in oklab, var(--acento) 12%, transparent);
+    padding: 0.15em 0.4em;
+    border-radius: 6px;
   }
 
   .prosa-caso :where(pre) {
@@ -337,9 +379,10 @@
     font-size: 0.75rem;
     line-height: 1.8;
     background-color: var(--hundido);
-    border: var(--borde-ancho) solid var(--linea-fuerte);
-    box-shadow: var(--desplazamiento) var(--desplazamiento) 0 var(--linea-fuerte);
-    padding: 1rem 1.25rem;
+    border: 1px solid var(--vidrio-borde);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra-suave);
+    padding: 1.15rem 1.35rem;
     margin: 1.75rem 0;
     overflow-x: auto;
     color: var(--tinta-media);
@@ -351,8 +394,11 @@
   .prosa-caso :where(blockquote) {
     margin-top: 1.75rem;
     padding: 1.15rem 1.35rem;
-    background-color: var(--superficie);
-    border: var(--borde-ancho) solid var(--linea-fuerte);
+    background-color: var(--vidrio);
+    border: 1px solid var(--vidrio-borde);
+    border-radius: var(--radio);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     font-size: 0.9375rem;
   }
   .prosa-caso :where(blockquote) :where(p):first-child { margin-top: 0; }
@@ -377,7 +423,7 @@
     font-family: var(--font-mono); font-size: 0.6875rem;
     text-transform: uppercase; letter-spacing: 0.06em;
     color: var(--tinta-tenue); font-weight: 600;
-    border-bottom: var(--borde-ancho) solid var(--linea-fuerte);
+    border-bottom: 1px solid var(--linea);
   }
   .prosa-caso :where(td):first-child { color: var(--tinta); }
 
@@ -478,8 +524,8 @@
 
 .cinta {
   overflow: hidden;
-  border-block: var(--borde-ancho) solid var(--linea-fuerte);
-  background-color: var(--acento);
+  border-block: 1px solid var(--vidrio-borde);
+  background-image: linear-gradient(100deg, var(--acento), var(--violeta));
   color: var(--acento-fg);
 }
 
@@ -508,7 +554,8 @@
 
 .esqueleto {
   background-color: var(--linea);
-  border: var(--borde-ancho) solid var(--linea-fuerte);
+  border: 1px solid var(--vidrio-borde);
+  border-radius: var(--radio);
 }
 
 @media (prefers-reduced-motion: no-preference) {

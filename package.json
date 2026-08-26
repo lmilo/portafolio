@@ -3,16 +3,17 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "nuxt dev",
-    "build": "node scripts/verificar-contenido.mjs && nuxt build",
-    "generate": "node scripts/verificar-contenido.mjs && nuxt generate",
+    "dev": "node scripts/preparar-dev.mjs && nuxt dev",
+    "build": "node scripts/preparar-dev.mjs && node scripts/verificar-contenido.mjs && nuxt build",
+    "generate": "node scripts/preparar-dev.mjs && node scripts/verificar-contenido.mjs && nuxt generate",
     "preview": "nuxt preview",
     "typecheck": "nuxt typecheck",
     "postinstall": "nuxt prepare",
     "verificar": "node scripts/verificar-contenido.mjs && python3 scripts/contraste.py",
     "verificar:enlaces": "node scripts/verificar-enlaces.mjs",
     "verificar:contraste": "python3 scripts/contraste.py",
-    "verificar:contenido": "node scripts/verificar-contenido.mjs"
+    "verificar:contenido": "node scripts/verificar-contenido.mjs",
+    "verificar:paginas": "node scripts/verificar-paginas.mjs"
   },
   "dependencies": {
     "@nuxt/content": "^3.15.2",

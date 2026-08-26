@@ -10,7 +10,7 @@ const switchLocalePath = useSwitchLocalePath()
 <template>
   <nav
     :aria-label="t('comun.cambiarIdioma')"
-    class="flex items-stretch border-2 border-linea-fuerte"
+    class="flex items-stretch border border-vidrio-borde"
   >
     <NuxtLink
       v-for="l in locales"

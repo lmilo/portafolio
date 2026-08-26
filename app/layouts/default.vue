@@ -20,13 +20,13 @@ const enlaces = computed(() => [
     >{{ t('comun.saltarContenido') }}</a>
 
     <header
-      class="sticky top-0 border-b-2 border-linea-fuerte bg-fondo/95 backdrop-blur-sm"
+      class="sticky top-0 border-b border-vidrio-borde bg-fondo/95 backdrop-blur-sm"
       style="z-index: var(--z-pegado)"
     >
       <div class="mx-auto flex w-full max-w-[1280px] items-center gap-4 px-5 py-3 md:px-10">
         <NuxtLink
           :to="localePath('/')"
-          class="fuente-display border-2 border-linea-fuerte bg-acento px-2.5 py-1
+          class="fuente-display border border-vidrio-borde bg-acento px-2.5 py-1
                  text-lg text-acento-fg"
         >{{ perfil.iniciales }}</NuxtLink>
 
@@ -58,7 +58,7 @@ const enlaces = computed(() => [
       <slot />
     </main>
 
-    <footer class="border-t-2 border-linea-fuerte bg-hundido">
+    <footer class="border-t border-vidrio-borde bg-hundido">
       <div class="mx-auto w-full max-w-[1280px] px-5 py-12 md:px-10">
         <div class="flex flex-wrap items-start justify-between gap-8">
           <div>
@@ -83,7 +83,7 @@ const enlaces = computed(() => [
           </nav>
         </div>
 
-        <div class="cinta-rayada mt-10 h-3" aria-hidden="true" />
+        <div class="filo mt-10 h-3" aria-hidden="true" />
       </div>
     </footer>
 

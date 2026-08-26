@@ -1,8 +1,7 @@
 <script setup lang="ts">
 /**
- * Elige el marco según lo que declare la captura en el frontmatter:
- * composición si trae `movil`, teléfono si es `dispositivo: movil`,
- * escritorio en el resto de casos.
+ * Elige el formato del mockup según lo que declare la captura. Un solo
+ * componente de mockup para todo el sitio; aquí solo se decide el formato.
  */
 type Captura = {
   archivo: string
@@ -17,36 +16,14 @@ type Captura = {
 const props = withDefaults(defineProps<{ captura: Captura, prioridad?: boolean }>(), {
   prioridad: false
 })
-
-const ruta = (archivo: string) => `/capturas/${archivo}`
 </script>
 
 <template>
-  <Composicion
-    v-if="props.captura.movil"
-    :escritorio="ruta(props.captura.archivo)"
-    :escritorio-alt="props.captura.alt"
-    :movil="ruta(props.captura.movil.archivo)"
-    :movil-alt="props.captura.movil.alt"
-    :url="props.captura.url"
-    :pie="props.captura.pie"
-    :ratio="props.captura.ratio"
-    :prioridad="props.prioridad"
-  />
-
-  <MarcoTelefono
-    v-else-if="props.captura.dispositivo === 'movil'"
-    :src="ruta(props.captura.archivo)"
+  <Mockup
+    :src="`/capturas/${props.captura.archivo}`"
     :alt="props.captura.alt"
-    :pie="props.captura.pie"
-    :ancho="props.prioridad ? '18rem' : '100%'"
-  />
-
-  <Marco
-    v-else
-    :src="ruta(props.captura.archivo)"
-    :alt="props.captura.alt"
-    :url="props.captura.url"
+    :variante="props.captura.dispositivo === 'movil' ? 'telefono' : 'escritorio'"
+    :url="props.captura.dispositivo === 'movil' ? undefined : props.captura.url"
     :pie="props.captura.pie"
     :ratio="props.captura.ratio"
     :prioridad="props.prioridad"

@@ -93,7 +93,7 @@ const opciones = computed(() => [
   <div class="bloque bg-superficie p-6 md:p-8">
     <!-- ÉXITO -->
     <div v-if="estado === 'exito'" class="py-6 text-center">
-      <p class="mx-auto flex size-14 items-center justify-center border-2 border-linea-fuerte bg-exito text-2xl text-exito-fg">
+      <p class="mx-auto flex size-14 items-center justify-center border border-vidrio-borde bg-exito text-2xl text-exito-fg">
         <span aria-hidden="true">✓</span>
       </p>
       <h3 class="fuente-display mt-5 text-2xl">{{ t('contacto.exitoTitulo') }}</h3>
@@ -128,11 +128,11 @@ const opciones = computed(() => [
             :aria-describedby="errores.nombre ? 'error-nombre' : undefined"
             class="mt-2 w-full border-2 bg-fondo px-3 py-2.5 transition-colors duration-150
                    focus:outline-none focus-visible:outline-3 focus-visible:outline-enlace"
-            :class="errores.nombre ? 'border-magenta' : 'border-linea-fuerte'"
+            :class="errores.nombre ? 'border-rosa' : 'border-linea-fuerte'"
             @blur="alSalir('nombre')"
             @input="alEscribir('nombre')"
           >
-          <p v-if="errores.nombre" id="error-nombre" class="mono mt-1.5 text-magenta">
+          <p v-if="errores.nombre" id="error-nombre" class="mono mt-1.5 text-rosa">
             {{ errores.nombre }}
           </p>
         </div>
@@ -153,11 +153,11 @@ const opciones = computed(() => [
             :aria-describedby="errores.correo ? 'error-correo' : undefined"
             class="mt-2 w-full border-2 bg-fondo px-3 py-2.5 transition-colors duration-150
                    focus:outline-none focus-visible:outline-3 focus-visible:outline-enlace"
-            :class="errores.correo ? 'border-magenta' : 'border-linea-fuerte'"
+            :class="errores.correo ? 'border-rosa' : 'border-linea-fuerte'"
             @blur="alSalir('correo')"
             @input="alEscribir('correo')"
           >
-          <p v-if="errores.correo" id="error-correo" class="mono mt-1.5 text-magenta">
+          <p v-if="errores.correo" id="error-correo" class="mono mt-1.5 text-rosa">
             {{ errores.correo }}
           </p>
         </div>
@@ -169,7 +169,7 @@ const opciones = computed(() => [
           <label
             v-for="o in opciones"
             :key="o.v"
-            class="cursor-pointer border-2 border-linea-fuerte px-3 py-2 text-sm font-semibold
+            class="cursor-pointer border border-vidrio-borde px-3 py-2 text-sm font-semibold
                    transition-colors duration-150 has-[:checked]:bg-acento
                    has-[:checked]:text-acento-fg has-[:focus-visible]:outline-3
                    has-[:focus-visible]:outline-enlace"
@@ -196,15 +196,15 @@ const opciones = computed(() => [
           :aria-describedby="errores.mensaje ? 'error-mensaje ayuda-mensaje' : 'ayuda-mensaje'"
           class="mt-2 w-full resize-y border-2 bg-fondo px-3 py-2.5 transition-colors duration-150
                  focus:outline-none focus-visible:outline-3 focus-visible:outline-enlace"
-          :class="errores.mensaje ? 'border-magenta' : 'border-linea-fuerte'"
+          :class="errores.mensaje ? 'border-rosa' : 'border-linea-fuerte'"
           @blur="alSalir('mensaje')"
           @input="alEscribir('mensaje')"
         />
         <div class="mt-1.5 flex items-start justify-between gap-4">
-          <p v-if="errores.mensaje" id="error-mensaje" class="mono text-magenta">
+          <p v-if="errores.mensaje" id="error-mensaje" class="mono text-rosa">
             {{ errores.mensaje }}
           </p>
-          <p class="mono ms-auto shrink-0" :class="restantes < 0 ? 'text-magenta' : 'text-tinta-tenue'">
+          <p class="mono ms-auto shrink-0" :class="restantes < 0 ? 'text-rosa' : 'text-tinta-tenue'">
             {{ restantes }}
           </p>
         </div>
@@ -219,7 +219,7 @@ const opciones = computed(() => [
       <div
         v-if="estado === 'error'"
         role="alert"
-        class="mt-6 border-2 border-linea-fuerte bg-magenta p-4 text-magenta-fg"
+        class="mt-6 border border-vidrio-borde bg-rosa p-4 text-rosa-fg"
       >
         <p class="font-bold">{{ t('contacto.errorTitulo') }}</p>
         <p class="mt-1 text-sm">{{ t('contacto.errorTexto') }}</p>

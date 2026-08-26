@@ -42,7 +42,7 @@ const enProduccion = computed(() =>
 
 <template>
   <div>
-    <header class="reticula relative border-b-2 border-linea-fuerte">
+    <header class="reticula relative border-b border-vidrio-borde">
       <div class="mx-auto w-full max-w-[1280px] px-5 py-14 md:px-10 md:py-20">
         <h1 class="fuente-display text-[clamp(2.5rem,7vw,4.5rem)]">{{ t('trabajo.titulo') }}</h1>
         <div class="mt-6 h-2 w-48 bg-acento" aria-hidden="true" />
@@ -66,7 +66,7 @@ const enProduccion = computed(() =>
     </section>
 
     <!-- ARCHIVO -->
-    <section class="border-t-2 border-linea-fuerte bg-hundido">
+    <section class="border-t border-vidrio-borde bg-hundido">
       <div class="mx-auto w-full max-w-[1280px] px-5 py-14 md:px-10 md:py-20">
         <div class="flex flex-wrap items-end justify-between gap-4">
           <h2 class="fuente-display revelar text-[clamp(1.85rem,4.5vw,2.75rem)]">
@@ -117,7 +117,7 @@ const enProduccion = computed(() =>
         <NuxtLink
           :to="localePath('/contacto')"
           class="pulsable mt-6 inline-flex border-acento-fg bg-acento-fg px-6 py-3 font-bold
-                 text-acento shadow-[5px_5px_0_var(--acento-fg)]"
+                 text-acento shadow-suave"
         >{{ t('contacto.abrirFormulario') }} →</NuxtLink>
       </div>
     </section>

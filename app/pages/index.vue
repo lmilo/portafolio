@@ -31,8 +31,8 @@ const datosCinta = computed(() => [
 
 const caminos = computed(() => [
   { titulo: t('home.camino1Titulo'), texto: t('home.camino1Texto'), cta: t('home.camino1Cta'), a: '/contacto', tono: 'boton-acento' },
-  { titulo: t('home.camino2Titulo'), texto: t('home.camino2Texto'), cta: t('home.camino2Cta'), a: '/servicios', tono: 'boton-cian' },
-  { titulo: t('home.camino3Titulo'), texto: t('home.camino3Texto'), cta: t('home.camino3Cta'), a: '/productos', tono: 'boton-magenta' }
+  { titulo: t('home.camino2Titulo'), texto: t('home.camino2Texto'), cta: t('home.camino2Cta'), a: '/servicios', tono: 'boton-hueco' },
+  { titulo: t('home.camino3Titulo'), texto: t('home.camino3Texto'), cta: t('home.camino3Cta'), a: '/productos', tono: 'boton-hueco' }
 ])
 </script>
 
@@ -40,7 +40,7 @@ const caminos = computed(() => [
   <div>
     <!-- HERO. La entrada va escalonada en CSS: corre fuera del hilo principal
          y no pierde fotogramas mientras el resto todavía monta. -->
-    <section class="reticula relative overflow-hidden border-b-2 border-linea-fuerte">
+    <section class="reticula relative overflow-hidden border-b border-vidrio-borde">
       <div class="mx-auto w-full max-w-[1280px] px-5 pb-14 pt-12 md:px-10 md:pb-20 md:pt-16">
         <p class="entra etiqueta" style="--retraso: 0ms">
           <span class="size-2 bg-exito" aria-hidden="true" />
@@ -66,7 +66,7 @@ const caminos = computed(() => [
           </div>
 
           <aside
-            class="entra mt-8 border-2 border-linea-fuerte bg-superficie p-4 lg:mt-0"
+            class="entra mt-8 border border-vidrio-borde bg-superficie p-4 lg:mt-0"
             style="--retraso: 460ms"
           >
             <p class="mono">{{ t('home.notaHero') }}</p>
@@ -142,14 +142,14 @@ const caminos = computed(() => [
       </div>
 
       <div class="revelar mt-10 flex justify-center">
-        <NuxtLink :to="localePath('/trabajo')" class="pulsable boton-cian px-7 py-3.5 text-base">
+        <NuxtLink :to="localePath('/trabajo')" class="pulsable boton-hueco px-7 py-3.5 text-base">
           {{ t('home.verTodo') }} →
         </NuxtLink>
       </div>
     </section>
 
     <!-- LOS TRES CAMINOS, cada uno con su color. -->
-    <section class="border-y-2 border-linea-fuerte bg-hundido">
+    <section class="border-y border-vidrio-borde bg-hundido">
       <div class="mx-auto w-full max-w-[1280px] px-5 py-14 md:px-10 md:py-20">
         <h2 class="fuente-display revelar text-[clamp(2rem,5.5vw,3.5rem)]">
           {{ t('home.caminosTitulo') }}
@@ -187,12 +187,12 @@ const caminos = computed(() => [
           <NuxtLink
             :to="localePath('/contacto')"
             class="pulsable border-acento-fg bg-acento-fg px-6 py-3 font-bold text-acento
-                   shadow-[5px_5px_0_var(--acento-fg)]"
+                   shadow-suave"
           >{{ t('contacto.abrirFormulario') }} →</NuxtLink>
           <a
             :href="`mailto:${perfil.correo}`"
             class="pulsable border-acento-fg bg-acento px-6 py-3 font-bold text-acento-fg
-                   shadow-[5px_5px_0_var(--acento-fg)]"
+                   shadow-suave"
           >{{ perfil.correo }}</a>
         </div>
       </div>
