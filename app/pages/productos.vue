@@ -8,7 +8,8 @@ const productos = computed(() => [
   {
     nombre: 'Motila',
     caso: '/trabajo/motila',
-    demo: 'https://motila.onrender.com/b/la-70',
+    // El slug real en producción. Cambiarlo aquí si se siembra otra barbería.
+    demo: 'https://motila.onrender.com/b/prueba-borrar',
     para: locale.value === 'es' ? 'Barberías y peluquerías' : 'Barbershops and salons',
     resumen: locale.value === 'es'
       ? 'Página pública de reservas para tus clientes, panel para cada barbero y panel administrativo para el dueño. Varias sedes en la misma cuenta.'

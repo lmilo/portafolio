@@ -19,13 +19,16 @@ stack:
   - Nuxt 4
   - Tailwind CSS v4
   - Docker Compose
-# PENDIENTE: ver la nota en la versión en español.
-enlaces: []
+enlaces:
+  - etiqueta: Open the demo shop
+    url: https://motila.onrender.com/b/prueba-borrar
+    tipo: vivo
+    duerme: true
 capturas:
   - archivo: motila-reserva.jpg
     alt: A barbershop's public booking page, with the service list and prices on the left and the booking summary on the right
     pie: What the client sees. They pick services, see real availability and book without creating an account. The shop name is changed — this is the test shop.
-    url: motila.onrender.com/b/la-70
+    url: motila.onrender.com
     ratio: 1559 / 784
 ---
 

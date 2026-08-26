@@ -19,15 +19,16 @@ stack:
   - Nuxt 4
   - Tailwind CSS v4
   - Docker Compose
-# PENDIENTE: la instancia de producción no tiene ninguna barbería sembrada
-# (todos los slugs dan 404 en /api/public/{slug}). El enlace vuelve en cuanto
-# se siembre la demo: etiqueta "Abrir la barbería demo", tipo vivo, duerme true.
-enlaces: []
+enlaces:
+  - etiqueta: Abrir la barbería demo
+    url: https://motila.onrender.com/b/prueba-borrar
+    tipo: vivo
+    duerme: true
 capturas:
   - archivo: motila-reserva.jpg
     alt: Página pública de reservas de una barbería, con la lista de servicios y precios a la izquierda y el resumen de la reserva a la derecha
     pie: "La página que ve el cliente. Elige servicios, ve la disponibilidad real y agenda sin crear cuenta. El nombre del local está cambiado: es la barbería de prueba."
-    url: motila.onrender.com/b/la-70
+    url: motila.onrender.com
     ratio: 1559 / 784
 ---
 
