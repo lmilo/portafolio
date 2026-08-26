@@ -18,6 +18,23 @@ stack:
   - Expo Router
   - EAS Build
 enlaces: []
+capturas:
+  - archivo: recargo-marcar.jpg
+    dispositivo: movil
+    alt: "Main screen with the day's greeting, the 24-hour band of the shift, a running timer at 00:03:39 and «earned so far $714»"
+    pie: "The 24-hour band is the shift drawn at its real hour. Below it, the premium running live."
+  - archivo: recargo-turno.jpg
+    dispositivo: movil
+    alt: "The shift in progress with a large «I finished my shift» button, and below it «Add a shift I forgot» and «Swaps with my coworkers»"
+    pie: "A button you can't miss. And the two things a notebook can't handle: the forgotten shift and the swap with a coworker."
+  - archivo: recargo-exportar.jpg
+    dispositivo: movil
+    alt: "The «Export my hours» screen with the chosen month and what the file contains: a summary by category, one row per shift, and the statute behind each band"
+    pie: "The file carries the article backing each band and the rate table with its effective date. Without that it's no use for a claim."
+  - archivo: recargo-ajustes.jpg
+    dispositivo: movil
+    alt: "Appearance settings with three theme options and the easy-mode switch, which enlarges text and buttons"
+    pie: "«Night blue background. It doesn't glare on the small-hours shift». Easy mode enlarges everything and leaves only what's needed on screen."
 ---
 
 > **Context.** Colombian labour law pays a premium — a *recargo* — for hours worked at

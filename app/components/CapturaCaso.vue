@@ -39,6 +39,7 @@ const ruta = (archivo: string) => `/capturas/${archivo}`
     :src="ruta(props.captura.archivo)"
     :alt="props.captura.alt"
     :pie="props.captura.pie"
+    :ancho="props.prioridad ? '18rem' : '100%'"
   />
 
   <Marco

@@ -27,6 +27,9 @@ if (!data.value?.caso) {
 const caso = computed(() => data.value!.caso!)
 const portada = computed(() => caso.value.capturas?.[0])
 const resto = computed(() => caso.value.capturas?.slice(1) ?? [])
+const soloMoviles = computed(() =>
+  resto.value.length > 1 && resto.value.every(c => c.dispositivo === 'movil')
+)
 
 useSeoMeta({
   title: () => caso.value.titulo,
@@ -38,10 +41,10 @@ useSeoMeta({
   <article v-if="caso" class="mx-auto w-full max-w-[1200px] px-6 md:px-12">
     <NuxtLink
       :to="localePath('/trabajo')"
-      class="mono mt-8 inline-block text-tinta-tenue transition-colors duration-[120ms] hover:text-acento"
+      class="pulsable boton-hueco mono mt-8 inline-flex px-4 py-2"
     >← {{ t('comun.volverTrabajo') }}</NuxtLink>
 
-    <header class="border-b border-linea py-10 md:py-14">
+    <header class="border-b-2 border-linea-fuerte py-10 md:py-14">
       <div class="flex flex-wrap items-center justify-between gap-3">
         <span class="rotulo">{{ String(caso.orden).padStart(2, '0') }}</span>
         <EstadoProyecto :estado="caso.estado" />
@@ -77,15 +80,20 @@ useSeoMeta({
       <ContentRenderer :value="caso" />
     </div>
 
-    <section v-if="resto.length" class="border-t border-linea py-10">
-      <CapturaCaso
-        v-for="c in resto"
-        :key="c.archivo"
-        :captura="c"
-      />
+    <section v-if="resto.length" class="border-t-2 border-linea-fuerte py-10">
+      <!-- Si todo lo que queda son pantallas de teléfono, van en fila: apiladas
+           gastan una pantalla cada una y se pierde que son un mismo recorrido. -->
+      <div :class="soloMoviles ? 'grid gap-6 sm:grid-cols-2 lg:grid-cols-3' : ''">
+        <CapturaCaso
+          v-for="c in resto"
+          :key="c.archivo"
+          :captura="c"
+          :class="soloMoviles ? '!my-0' : ''"
+        />
+      </div>
     </section>
 
-    <footer class="border-t border-linea py-10">
+    <footer class="border-t-2 border-linea-fuerte py-10">
       <h2 class="rotulo">{{ t('comun.stack') }}</h2>
       <p class="mono mt-3 text-tinta-media">{{ caso.stack.join(' · ') }}</p>
 
@@ -93,14 +101,14 @@ useSeoMeta({
         <EnlaceProyecto v-for="e in caso.enlaces" :key="e.url" :enlace="e" />
       </div>
 
-      <nav class="mt-14 flex flex-wrap justify-between gap-4 border-t border-linea pt-8">
+      <nav class="mt-14 flex flex-wrap justify-between gap-4 border-t-2 border-linea-fuerte pt-8">
         <NuxtLink
           v-if="data?.anterior"
           :to="localePath(rutaCaso(data.anterior.path))"
           class="group max-w-[45%]"
         >
           <span class="rotulo">← {{ t('comun.anterior') }}</span>
-          <span class="mt-1 block transition-colors duration-[120ms] group-hover:text-acento">
+          <span class="mt-1 block transition-colors duration-[120ms] group-hover:text-enlace">
             {{ data.anterior.titulo }}
           </span>
         </NuxtLink>
@@ -110,7 +118,7 @@ useSeoMeta({
           class="group ms-auto max-w-[45%] text-right"
         >
           <span class="rotulo">{{ t('comun.siguiente') }} →</span>
-          <span class="mt-1 block transition-colors duration-[120ms] group-hover:text-acento">
+          <span class="mt-1 block transition-colors duration-[120ms] group-hover:text-enlace">
             {{ data.siguiente.titulo }}
           </span>
         </NuxtLink>

@@ -18,6 +18,23 @@ stack:
   - Expo Router
   - EAS Build
 enlaces: []
+capturas:
+  - archivo: recargo-marcar.jpg
+    dispositivo: movil
+    alt: "Pantalla principal con el saludo del día, la banda de 24 horas del turno, el cronómetro en 00:03:39 y «Llevas ganado $714»"
+    pie: "La banda de 24 horas es el turno dibujado en su hora real. Debajo, el recargo corriendo en vivo."
+  - archivo: recargo-turno.jpg
+    dispositivo: movil
+    alt: "El turno en curso con el botón grande «Terminé mi turno», y debajo «Agregar un turno que olvidé» y «Cambios con mis compañeros»"
+    pie: "Un botón que no se puede errar. Y las dos cosas que un cuaderno no resuelve: el turno olvidado y el cambio con un compañero."
+  - archivo: recargo-exportar.jpg
+    dispositivo: movil
+    alt: "Pantalla «Sacar mis horas» con el mes elegido y lo que lleva el archivo: resumen por categoría, un renglón por turno, y la norma que sustenta cada franja"
+    pie: "El archivo lleva el artículo que sustenta cada franja y la tabla de porcentajes con su fecha de vigencia. Sin eso no sirve para reclamar."
+  - archivo: recargo-ajustes.jpg
+    dispositivo: movil
+    alt: "Ajustes de apariencia con tres opciones de tema y el interruptor de modo fácil, que agranda letra y botones"
+    pie: "«Fondo azul noche. No encandila en el turno de la madrugada». El modo fácil agranda todo y deja en pantalla solo lo necesario."
 ---
 
 La planilla de turnos siempre fue del empleador. Esta es la del trabajador, para
