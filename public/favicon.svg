@@ -1,6 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" fill="#F1D500"/>
-  <rect x="3" y="3" width="58" height="58" fill="none" stroke="#0D0B03" stroke-width="6"/>
-  <text x="32" y="45" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="34"
-        font-weight="800" text-anchor="middle" fill="#0D0B03" letter-spacing="-1.5">CR</text>
+  <defs>
+    <!-- El mismo degradado que carga la palabra del titular: violeta, cian y
+         rosa. Es lo que hace que la pestaña se reconozca como el sitio. -->
+    <linearGradient id="aurora" x1="8" y1="56" x2="56" y2="8" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#B27DFF"/>
+      <stop offset="0.5" stop-color="#00D3E5"/>
+      <stop offset="1" stop-color="#FB75BB"/>
+    </linearGradient>
+    <!-- Un halo interior evita que el cuadro se lea plano a 16px, que es donde
+         de verdad vive un favicon. -->
+    <radialGradient id="halo" cx="0.3" cy="0.25" r="0.85">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="64" height="64" rx="14" fill="#080B1B"/>
+  <rect x="3" y="3" width="58" height="58" rx="12" fill="url(#aurora)"/>
+  <rect x="3" y="3" width="58" height="58" rx="12" fill="url(#halo)"/>
+
+  <text x="32" y="44" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="31"
+        font-weight="800" text-anchor="middle" fill="#0A071F" letter-spacing="-1.4">CR</text>
 </svg>

@@ -26,8 +26,10 @@ const enlaces = computed(() => [
       <div class="mx-auto flex w-full max-w-[1280px] items-center gap-4 px-5 py-3 md:px-10">
         <NuxtLink
           :to="localePath('/')"
-          class="fuente-display border border-vidrio-borde bg-acento px-2.5 py-1
-                 text-lg text-acento-fg"
+          class="fuente-display rounded-[10px] bg-gradient-to-br from-violeta via-cian
+                 to-rosa px-2.5 py-1 text-lg text-acento-fg shadow-suave
+                 transition-transform duration-200 ease-[cubic-bezier(0.23,1,0.32,1)]
+                 motion-safe:hover:scale-105"
         >{{ perfil.iniciales }}</NuxtLink>
 
         <nav class="hidden items-center gap-1 md:flex" aria-label="principal">
