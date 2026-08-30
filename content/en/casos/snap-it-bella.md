@@ -3,7 +3,7 @@ titulo: Snap It Bella
 cliente: Snap It Bella · through Estrateclab
 resumen: Full redesign of a single-product Shopify store — a magnetic strap for dental loupes, sold in the US and Canada.
 gancho: A one-product store where the page has to do all the selling. If it doesn't explain the mechanism, there's no sale.
-orden: 5
+orden: 6
 estado: entregado
 desde: '2026-08'
 evidencia:

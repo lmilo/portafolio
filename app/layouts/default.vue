@@ -86,24 +86,22 @@ const enlaces = computed(() => [
         </div>
 
         <!--
-          Los documentos legales de Recargo viven en este sitio porque Google Play exige una
-          URL pública y estable para publicar la app. Van en el pie y no en la navegación:
-          no son contenido del portafolio, son la letra pequeña de otro producto.
+          Los documentos legales de las apps viven en este sitio porque Google Play exige una
+          URL pública y estable para publicar. Van en el pie y no en la navegación: no son
+          contenido del portafolio, son la letra pequeña de otro producto.
+
+          El pie enlaza al índice y no a cada documento: con dos apps ya son cuatro, y
+          vienen más. Las rutas directas de cada uno siguen intactas — son las que apuntan
+          las fichas de la tienda.
         -->
         <nav class="mt-10 border-t border-linea pt-6" aria-label="legal">
           <p class="rotulo">{{ $t('pie.legal') }}</p>
           <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2">
             <li>
               <NuxtLink
-                :to="localePath('/legal/recargo/privacidad')"
+                :to="localePath('/legal')"
                 class="mono text-sm text-tinta-tenue underline"
-              >{{ $t('pie.privacidad') }}</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink
-                :to="localePath('/legal/recargo/terminos')"
-                class="mono text-sm text-tinta-tenue underline"
-              >{{ $t('pie.terminos') }}</NuxtLink>
+              >{{ $t('pie.documentos') }}</NuxtLink>
             </li>
           </ul>
         </nav>

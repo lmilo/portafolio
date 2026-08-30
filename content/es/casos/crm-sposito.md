@@ -3,7 +3,7 @@ titulo: CRM Sposito
 cliente: Sposito · vía Estrateclab
 resumen: Calendario editorial y gestión de contenido para una agencia. Llegué a un sistema ya en producción que iba lento, lo medí y lo arreglé.
 gancho: Seis peticiones simultáneas tardaban 6,18 segundos. Después, 0,022. La causa no era la base de datos.
-orden: 4
+orden: 5
 estado: produccion
 desde: '2026-08'
 evidencia:

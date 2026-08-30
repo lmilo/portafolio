@@ -2,7 +2,7 @@
 titulo: Gestor de Fincas
 resumen: "Organizador de paseos de finca: compara candidatas, calcula el mercado según la gente confirmada, compara precios entre tiendas y liquida cuánto pone cada quien."
 gancho: Un paseo ajeno no se ve ni cambiando el número en la URL. Hay una suite de pruebas dedicada exclusivamente a comprobarlo.
-orden: 6
+orden: 7
 estado: produccion
 desde: '2026-07'
 evidencia:

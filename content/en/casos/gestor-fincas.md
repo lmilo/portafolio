@@ -2,7 +2,7 @@
 titulo: Country House Trip Planner
 resumen: Plans weekend house rentals with friends — compares candidates, sizes the groceries against confirmed guests, compares supermarket prices and settles what each person owes.
 gancho: You can't see someone else's trip by changing the number in the URL. There's a test suite whose only job is proving that.
-orden: 6
+orden: 7
 estado: produccion
 desde: '2026-07'
 evidencia:

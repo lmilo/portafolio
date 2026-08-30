@@ -17,17 +17,16 @@
  * que se desincronizaron.
  */
 
+import type { SeccionLegal } from './legal'
+import { CORREO_LEGAL } from './legal'
+
 export const VIGENCIA_RECARGO = '30 de agosto de 2026'
-export const CORREO_RECARGO = 'camiloarinconc@gmail.com'
+export const CORREO_RECARGO = CORREO_LEGAL
 export const REPO_RECARGO = 'https://github.com/lmilo/recargo'
 
-export type SeccionLegal = {
-  titulo: string
-  /** Cada entrada es un párrafo. Las que empiezan con "- " se rinden como lista. */
-  parrafos: string[]
-  /** Se destaca en caja con borde de acento: lo que no se puede pasar por alto. */
-  destacado?: boolean
-}
+// `SeccionLegal` vive en `./legal` desde que llegó la segunda app. NO se reexporta:
+// con los auto-imports de Nuxt, el mismo tipo en dos módulos hace que uno gane en
+// silencio y el aviso aparece en cada build.
 
 export const PRIVACIDAD_RECARGO: SeccionLegal[] = [
   {

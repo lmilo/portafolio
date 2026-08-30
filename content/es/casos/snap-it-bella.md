@@ -3,7 +3,7 @@ titulo: Snap It Bella
 cliente: Snap It Bella · vía Estrateclab
 resumen: "Rediseño completo de una tienda Shopify de producto único: una correa magnética para lupas dentales que se vende en Estados Unidos y Canadá."
 gancho: Una tienda de un solo artículo donde la página tiene que hacer todo el trabajo de venta. Si no explica el mecanismo, no hay compra.
-orden: 5
+orden: 6
 estado: entregado
 desde: '2026-08'
 evidencia:

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PRIVACIDAD_RECARGO } from '~/utils/legalRecargo'
+import { PRIVACIDAD_RECARGO, REPO_RECARGO, VIGENCIA_RECARGO } from '~/utils/legalRecargo'
 
 /**
  * La URL que Google Play exige para publicar la app. Tiene que ser pública, estable y no
@@ -16,8 +16,11 @@ useSeoMeta({
 
 <template>
   <DocumentoLegal
+    app="Recargo"
     titulo="Política de tratamiento de datos"
     entrada="Qué guarda la app, qué sale del teléfono y qué no. Escrito para leerse sin abogado, porque quien usa Recargo rara vez tiene uno."
     :secciones="PRIVACIDAD_RECARGO"
+    :vigencia="VIGENCIA_RECARGO"
+    :repo="REPO_RECARGO"
   />
 </template>

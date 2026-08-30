@@ -3,7 +3,7 @@ titulo: Sposito CRM
 cliente: Sposito · through Estrateclab
 resumen: Editorial calendar and content management for an agency. I joined a system already in production that was slow, measured it, and fixed it.
 gancho: Six simultaneous requests took 6.18 seconds. Afterwards, 0.022. The cause wasn't the database.
-orden: 4
+orden: 5
 estado: produccion
 desde: '2026-08'
 evidencia:
