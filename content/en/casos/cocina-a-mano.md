@@ -6,11 +6,11 @@ orden: 4
 estado: desarrollo
 desde: '2026-05'
 evidencia:
-  - 90 tests on the pure logic
+  - 124 tests on the pure logic
   - 4 ways to load the pantry
-  - Own Worker deployed
+  - Own Worker in production
   - Zero data server
-  - Signed APK built
+  - Signed, installable APK
 stack:
   - React Native
   - Expo SDK 57
@@ -64,6 +64,11 @@ quantity and a unit is a job for a lookup table, not a model, and sending it ove
 network would cost a wait and break the feature with no signal — exactly when someone is
 putting the groceries away.
 
+And it understands more than the quantity. *"Two pounds of chicken for the freezer, lasts
+three months"* arrives with its location and expiry already set. What the user **said**
+overrides what the app calculates, and it's shown differently: without the "about" of an
+estimate, because that's their own data.
+
 ## What testing turned up
 
 **The match ignored quantities.** Having 5 grams of rice scored the same as having 5
@@ -86,6 +91,17 @@ Hence the rule governing everything the AI touches: **the app may get it wrong r
 it may not get it wrong saving.** Nothing from a model enters the inventory without passing
 a review screen, with the uncertain lines flagged.
 
+**And the design flaw you only see in use.** Loading eight products from a receipt, every
+one arrived with no expiry date. With no date the food clock shows nothing, so the very
+feature that justifies the app was dead unless the user edited all eight by hand, one at a
+time. The app worked and was useless.
+
+It was fixed with a table of typical shelf lives, computed locally. But the app **proposes,
+it doesn't assert**: figures are phrased with "about" —"lasts about a week"—, never as the
+date printed on the package, everything is editable before saving, and **what the table
+doesn't recognise gets no invented date**. The terms of use say the app doesn't know how you
+stored the product, and that has to stay true after the improvement, not only before it.
+
 ## How it looks
 
 Colour encodes two axes and neither one decorates: **basil green** for what you can already
@@ -105,5 +121,5 @@ to unlock with oil on your hands, is the most expensive failure that screen can 
 Built, signed, and with the Worker deployed and tested against receipts. **What's missing
 is the one thing that can't be simulated**: loading a full week of groceries through the
 three new paths and seeing whether the match holds up. "Chicken breast" in a recipe and
-`POLLO PECHUGA BAND 500G` on a receipt don't match on words, and none of the 90 tests can
+`POLLO PECHUGA BAND 500G` on a receipt don't match on words, and none of the 124 tests can
 tell you whether that works in real life.

@@ -79,9 +79,15 @@
     "queNoTitulo": "What I don't do"
   },
   "productos": {
-    "titulo": "Systems for rent",
-    "entrada": "Software that already exists, already works and already has people using it. Rented monthly, with no development in between.",
-    "verDemo": "See the demo"
+    "titulo": "Own products",
+    "entrada": "Software that already exists and already works: systems rented monthly, and Android apps anyone can install.",
+    "verDemo": "See the demo",
+    "alquiler": "Systems for rent",
+    "enPlay": "Android apps",
+    "enPlayEntrada": "Free and ad-supported. The data never leaves the phone: no account, no server, nothing for anyone to recover.",
+    "verEnPlay": "View on Google Play",
+    "prontoEnPlay": "Coming to Google Play",
+    "verLegal": "What it does with your data"
   },
   "contacto": {
     "titulo": "Let's talk",

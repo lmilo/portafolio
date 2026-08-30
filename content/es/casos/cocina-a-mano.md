@@ -6,11 +6,11 @@ orden: 4
 estado: desarrollo
 desde: '2026-05'
 evidencia:
-  - 90 pruebas de la lógica pura
+  - 124 pruebas de la lógica pura
   - 4 formas de cargar la despensa
-  - Worker propio desplegado
+  - Worker propio en producción
   - Cero servidor de datos
-  - APK compilado y firmado
+  - APK firmado e instalable
 stack:
   - React Native
   - Expo SDK 57
@@ -65,6 +65,11 @@ cantidad y la unidad no hay nada que un modelo haga mejor que una tabla, y manda
 red costaría una espera y que la función deje de servir sin señal — justo cuando alguien
 está guardando el mercado.
 
+Y entiende más que la cantidad. *"Dos libras de pollo para el congelador que dura tres
+meses"* entra con su lugar y su vencimiento puestos. Lo que el usuario **dijo** manda sobre
+lo que la app calcula, y se muestra distinto: sin el "como" de las estimaciones, porque eso
+es un dato suyo.
+
 ## Lo que salió al probarlo
 
 **El match ignoraba las cantidades.** Tener 5 gramos de arroz puntuaba igual que tener 5
@@ -87,6 +92,17 @@ De ahí sale la regla que gobierna todo lo que toca la IA: **la app puede equivo
 leyendo, pero no puede equivocarse guardando.** Nada de lo que sale de un modelo entra al
 inventario sin pasar por una pantalla de revisión, con lo dudoso marcado.
 
+**Y el fallo de diseño que solo se ve usándola.** Al cargar ocho productos de una factura,
+todos entraban sin fecha de vencimiento. Sin fecha el reloj de la comida no marca nada, así
+que la función que justifica la app entera quedaba muerta salvo que el usuario editara los
+ocho a mano, uno por uno. La app funcionaba y no servía.
+
+Se resolvió con una tabla de duraciones típicas por alimento, en local. Pero la app
+**propone, no afirma**: los números se anuncian con "como" —"dura como una semana"—, nunca
+como fecha del empaque, todo es editable antes de guardar, y **lo que la tabla no reconoce
+no recibe fecha inventada**. Los términos de uso dicen que la app no sabe cómo guardaste el
+producto, y eso tiene que seguir siendo verdad después de la mejora, no solo antes.
+
 ## Cómo se ve
 
 El color codifica dos ejes y ninguno decora: **verde albahaca** para lo que te alcanza, y
@@ -107,5 +123,5 @@ aceite es el fallo más caro que puede tener esa pantalla.
 Compilada, firmada y con el Worker desplegado y probado contra recibos. **Falta lo único
 que no se puede simular**: cargar el mercado de una semana por los tres caminos nuevos y
 ver si el match aguanta. "Pechuga de pollo" en la receta contra `POLLO PECHUGA BAND 500G`
-en la factura no coinciden por palabras, y ninguna de las 90 pruebas puede decir si eso
+en la factura no coinciden por palabras, y ninguna de las 124 pruebas puede decir si eso
 funciona en la vida real.

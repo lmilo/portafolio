@@ -79,9 +79,15 @@
     "queNoTitulo": "Lo que no hago"
   },
   "productos": {
-    "titulo": "Sistemas en alquiler",
-    "entrada": "Software que ya existe, ya funciona y ya tiene gente usándolo. Se alquila por mensualidad, sin desarrollo de por medio.",
-    "verDemo": "Ver la demo"
+    "titulo": "Productos propios",
+    "entrada": "Software que ya existe y ya funciona: sistemas que se alquilan por mensualidad, y apps de Android que cualquiera puede instalar.",
+    "verDemo": "Ver la demo",
+    "alquiler": "Sistemas en alquiler",
+    "enPlay": "Apps de Android",
+    "enPlayEntrada": "Gratuitas y sostenidas con publicidad. Los datos no salen del teléfono: no hay cuenta, no hay servidor, no hay nada que recuperar de nadie.",
+    "verEnPlay": "Ver en Google Play",
+    "prontoEnPlay": "Pronto en Google Play",
+    "verLegal": "Qué hace con tus datos"
   },
   "contacto": {
     "titulo": "Hablemos",
