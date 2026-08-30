@@ -6,14 +6,14 @@ orden: 3
 estado: desarrollo
 desde: '2026-07'
 evidencia:
-  - 39 commits
-  - 172 casos frontera
+  - 261 casos de prueba
   - 8 categorías legales
-  - APK probado en dispositivo
   - 5 formatos de salida
+  - En uso con trabajadores reales
+  - APK probado en dispositivo
 stack:
   - React Native
-  - Expo (SDK 53+)
+  - Expo SDK 57
   - TypeScript
   - Expo Router
   - EAS Build

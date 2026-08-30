@@ -110,5 +110,10 @@
     "errMensajeLargo": "That message is too long. 2000 characters max.",
     "otroMensaje": "Send another message",
     "requerido": "required"
+  },
+  "pie": {
+    "legal": "Legal",
+    "privacidad": "Recargo data policy",
+    "terminos": "Recargo terms"
   }
 }
