@@ -25,6 +25,7 @@ const props = defineProps<{
 }>()
 
 const { locale } = useI18n()
+const localePath = useLocalePath()
 
 /** Las entradas que empiezan con "- " forman una lista; el resto son párrafos. */
 function bloques(parrafos: string[]) {
@@ -95,6 +96,16 @@ const secciones = computed(() => props.secciones.map((s) => ({ ...s, bloques: bl
           <a class="mono font-bold underline" :href="repo" target="_blank" rel="noopener noreferrer">
             el repositorio del proyecto</a>, donde cada cambio queda con su fecha.
         </p>
+        <!--
+          El índice de todas las apps se alcanza desde aquí y no desde el pie del sitio:
+          en el pie se acumulaba un enlace por app y no decía de cuál era cada documento.
+          Quien está leyendo ESTA política es el único a quien le sirve ver las demás.
+        -->
+        <p class="medida-ancha mt-6 text-sm text-tinta-tenue">
+          <NuxtLink class="mono font-bold underline" :to="localePath('/legal')"
+            >Las políticas de las demás apps</NuxtLink>
+        </p>
+
         <div class="filo mt-8 h-3" aria-hidden="true" />
       </section>
     </div>

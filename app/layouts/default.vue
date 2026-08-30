@@ -86,26 +86,17 @@ const enlaces = computed(() => [
         </div>
 
         <!--
-          Los documentos legales de las apps viven en este sitio porque Google Play exige una
-          URL pública y estable para publicar. Van en el pie y no en la navegación: no son
-          contenido del portafolio, son la letra pequeña de otro producto.
+          La letra pequeña de cada app vive en SU ficha de proyecto, no aquí.
 
-          El pie enlaza al índice y no a cada documento: con dos apps ya son cuatro, y
-          vienen más. Las rutas directas de cada uno siguen intactas — son las que apuntan
-          las fichas de la tienda.
+          Estuvo en el pie y se sacó: con dos apps ya eran cuatro documentos, y los juegos
+          de Play traerán ocho más. Una lista de doce enlaces al final de cada página no la
+          lee nadie y encima no dice de qué app es cada uno. En la ficha del proyecto el
+          lector ya sabe de qué producto se le está hablando.
+
+          `/legal` sigue existiendo como índice de todas —es la red de seguridad si alguien
+          llega por buscador— y las rutas directas de cada documento no se tocan nunca:
+          son las que apuntan las fichas de Google Play, y romperlas es motivo de suspensión.
         -->
-        <nav class="mt-10 border-t border-linea pt-6" aria-label="legal">
-          <p class="rotulo">{{ $t('pie.legal') }}</p>
-          <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2">
-            <li>
-              <NuxtLink
-                :to="localePath('/legal')"
-                class="mono text-sm text-tinta-tenue underline"
-              >{{ $t('pie.documentos') }}</NuxtLink>
-            </li>
-          </ul>
-        </nav>
-
         <div class="filo mt-10 h-3" aria-hidden="true" />
       </div>
     </footer>

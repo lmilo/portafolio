@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { APPS_LEGALES } from '~/utils/legal'
+
 const route = useRoute()
 const { t, locale } = useI18n()
 const localePath = useLocalePath()
@@ -25,6 +27,19 @@ if (!data.value?.caso) {
 }
 
 const caso = computed(() => data.value!.caso!)
+
+/**
+ * Los documentos legales de la app de este caso, si los tiene publicados.
+ *
+ * Viven junto al proyecto y no en un índice global a propósito: con dos apps ya son
+ * cuatro documentos y los juegos de Play traerán ocho más. Una lista de doce enlaces en el
+ * pie no la lee nadie y no dice de qué app es cada uno. Aquí, en cambio, están donde el
+ * lector ya sabe de qué producto está hablando.
+ *
+ * El slug del caso y el de la app coinciden por convención; si algún día dejan de hacerlo,
+ * esto simplemente no pinta nada en vez de romperse.
+ */
+const legal = computed(() => APPS_LEGALES.find(a => a.slug === slug.value) ?? null)
 const portada = computed(() => caso.value.capturas?.[0])
 const resto = computed(() => caso.value.capturas?.slice(1) ?? [])
 const soloMoviles = computed(() =>
@@ -106,6 +121,21 @@ useSeoMeta({
         <span aria-hidden="true">🔒</span>
         <span>{{ t('comun.sinEnlace') }}</span>
       </p>
+
+      <div v-if="legal" class="mt-12 border-t border-vidrio-borde pt-8">
+        <h2 class="rotulo">{{ t('comun.legal') }}</h2>
+        <p class="medida mt-3 text-sm text-tinta-media">{{ t('comun.legalPie') }}</p>
+        <div class="mt-5 flex flex-wrap gap-4">
+          <NuxtLink
+            :to="localePath(`/legal/${legal.slug}/privacidad`)"
+            class="pulsable boton-hueco inline-flex px-4 py-2 text-sm"
+          >{{ t('comun.legalDatos') }}</NuxtLink>
+          <NuxtLink
+            :to="localePath(`/legal/${legal.slug}/terminos`)"
+            class="pulsable boton-hueco inline-flex px-4 py-2 text-sm"
+          >{{ t('comun.legalTerminos') }}</NuxtLink>
+        </div>
+      </div>
 
       <nav class="mt-14 flex flex-wrap justify-between gap-4 border-t border-vidrio-borde pt-8">
         <NuxtLink

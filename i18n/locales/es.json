@@ -31,7 +31,11 @@
     "hablemos": "Hablemos",
     "desliza": "Desliza",
     "cargando": "Cargando",
-    "sinEnlace": "Sin enlace público: este sistema tiene datos reales de personas. Lo muestro en una conversación."
+    "sinEnlace": "Sin enlace público: este sistema tiene datos reales de personas. Lo muestro en una conversación.",
+    "legal": "Letra pequeña",
+    "legalPie": "Los documentos que la tienda exige para publicar la app. Escritos para leerse sin abogado.",
+    "legalDatos": "Tratamiento de datos",
+    "legalTerminos": "Términos de uso"
   },
   "home": {
     "kicker": "Desarrollador fullstack · Medellín, Colombia",

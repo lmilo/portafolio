@@ -31,7 +31,11 @@
     "hablemos": "Let's talk",
     "desliza": "Scroll",
     "cargando": "Loading",
-    "sinEnlace": "No public link: this system holds real people’s data. I walk through it in a conversation."
+    "sinEnlace": "No public link: this system holds real people’s data. I walk through it in a conversation.",
+    "legal": "The fine print",
+    "legalPie": "The documents the store requires to publish the app. Written to be read without a lawyer.",
+    "legalDatos": "Data policy",
+    "legalTerminos": "Terms of use"
   },
   "home": {
     "kicker": "Full-stack developer · Medellín, Colombia",

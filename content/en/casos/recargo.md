@@ -87,9 +87,40 @@ Holidays aren't tabulated either — they're computed, because some are derived 
 Easter and some are moved to Monday by the Ley Emiliani.
 
 All of it is checked against Ley 2466 of 2025, Ley 2101 of 2021 and the Código
-Sustantivo del Trabajo, and covered by 172 boundary test cases — because boundaries are
+Sustantivo del Trabajo, and covered by 261 boundary test cases — because boundaries are
 where this breaks: the shift crossing midnight, the one starting on a holiday and
 ending on a workday, the one landing exactly on the date a rate changed.
+
+## What real use taught
+
+Everything above came from reading the law. What came next came from real workers using
+it, and none of these three would have occurred to anyone sitting in front of a labour
+code:
+
+**Half of Colombia is paid fortnightly.** A total from the 1st to the 31st is useless to
+someone paid on the 15th: it shows a figure that won't match any payslip they receive,
+and matching is the whole point of the app. The pay period became a first-class concept
+that governs the entire app — without touching the calculation, because the working day
+is counted per day and the overtime cap per week, and neither depends on when payroll
+closes.
+
+**Some employers pay premiums in arrears.** Work done between the 16th and the 31st of
+August arrives with the payment on the 15th of September. Not knowing that, the app
+compared against a payslip that didn't yet include those hours, showed a large gap, and
+the worker concluded they were being robbed. That error pushes people to claim too
+early, which is the easiest way for an employer to dismiss the entire claim — including
+the part that was true.
+
+**The statutory percentages are a floor, not a ceiling.** Collective agreements exist
+that pay daytime overtime at 50% instead of 25%. Downward the law is blunt: an agreement
+paying below the minimum reduces nothing, signed or not. So the app now keeps three
+separate levels — the legal minimum, what was agreed, and what was paid — and reports
+the two shortfalls separately: the one you claim with the labour code in hand is not the
+one that requires producing the collective agreement.
+
+The pattern repeats: **the calculation engine never failed.** It carries 261 test cases
+and hasn't failed one. What failed was always an assumption about how payroll actually
+works.
 
 ## How it turned out
 
@@ -116,7 +147,14 @@ knowing you were underpaid isn't enough, you have to be able to contest it.
 
 ## Status
 
-Installed and tested on a real phone: notifications arrive, all five formats generate
-and share, the simplified mode works. **What's missing is the one thing that can't be
-simulated**: someone using it across their own shifts for a full month and comparing
-against a real payslip. Until that happens, it doesn't go out to a worker.
+**In use by real workers**, which is where the requirements that matter come from.
+Notifications arrive, all five formats generate and share, easy mode works, and the APK
+is tested on a device.
+
+It's on its way to Google Play. That brought two things: the fine print the store
+requires — below — and advertising, because the project has to pay for itself. The
+banner forced the privacy promise to be rewritten rather than deleted: it no longer says
+*"the app collects nothing"* but *"your shifts and your salary never leave this phone"*,
+which is narrower and is true. A broad false promise is worthless in a product whose
+value is trust.
+

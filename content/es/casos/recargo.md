@@ -81,9 +81,39 @@ Los festivos tampoco se tabulan: se calculan, porque hay fechas móviles derivad
 Pascua y traslados al lunes por la Ley Emiliani.
 
 Todo eso está verificado contra la Ley 2466 de 2025, la Ley 2101 de 2021 y el Código
-Sustantivo del Trabajo, y cubierto por 172 casos de prueba en las fronteras — que es
+Sustantivo del Trabajo, y cubierto por 261 casos de prueba en las fronteras — que es
 donde el cálculo se rompe: el turno que cruza medianoche, el que empieza en festivo y
 termina en día hábil, el que cae justo en la fecha de cambio de norma.
+
+## Lo que enseñó el uso real
+
+Todo lo anterior salió de leer la ley. Lo que vino después salió de que la usaran
+trabajadores de verdad, y ninguna de estas tres cosas se le habría ocurrido a nadie
+frente a un Código Sustantivo del Trabajo:
+
+**A media Colombia le pagan quincenal.** Un total del 1 al 31 no le sirve a quien cobra
+el 15: le muestra una cifra que no va a coincidir con ningún desprendible que reciba, y
+la app existe justamente para que coincidan. El corte de pago se volvió una pieza propia
+que manda en toda la app — sin tocar el cálculo, porque la jornada se cuenta por día y el
+tope de extras por semana, y eso no depende de cuándo corte la nómina.
+
+**Hay empresas que pagan los recargos vencidos.** Lo trabajado del 16 al 31 de agosto
+llega con el pago del 15 de septiembre. Sin saberlo, la app comparaba contra un
+desprendible que todavía no incluía esas horas, mostraba una diferencia grande, y el
+trabajador concluía que le estaban robando. Ese error empuja a reclamar antes de tiempo,
+que es la forma más fácil de que la empresa desestime el reclamo entero — incluida la
+parte que sí era cierta.
+
+**Los porcentajes del Código son un piso, no un techo.** Hay convenciones colectivas que
+pagan la extra al 50% en vez del 25%. Y hacia abajo la ley es tajante: un acuerdo que
+pague menos del mínimo no rebaja nada aunque esté firmado. De ahí que la app maneje tres
+niveles separados —el mínimo legal, lo pactado y lo pagado— y dé los dos faltantes por
+aparte: el que se reclama con el Código en la mano no es el mismo que el que exige
+mostrar la convención.
+
+El patrón se repite: **el motor de cálculo nunca falló.** Lleva 261 casos de prueba y no
+ha fallado uno. Lo que fallaba era siempre un supuesto sobre cómo funciona la nómina de
+verdad.
 
 ## Cómo quedó
 
@@ -110,7 +140,13 @@ algo útil: no basta con saber que te pagaron mal, hay que poder reclamarlo.
 
 ## Estado
 
-Instalada y probada en un teléfono real: los avisos llegan, los cinco formatos se
-generan y se comparten, el modo fácil funciona. **Falta lo único que no se puede
-simular**: que alguien la use en sus propios turnos durante un mes completo y compare
-contra su desprendible real. Hasta que eso pase, no se le entrega a un trabajador.
+**En uso con trabajadores reales**, que es de donde salen los requisitos que importan.
+Los avisos llegan, los cinco formatos se generan y se comparten, el modo fácil funciona,
+y el APK está probado en dispositivo.
+
+Va camino a Google Play. Eso trajo dos cosas: la letra pequeña que la tienda exige
+—abajo—, y publicidad, porque el proyecto tiene que sostenerse solo. El banner obligó a
+reescribir la promesa de privacidad en vez de borrarla: ya no dice *«la app no recoge
+nada»* sino *«tus turnos y tu sueldo no salen de este teléfono»*, que es más estrecho y
+es verdad. Una promesa amplia y falsa no sirve en un producto cuyo valor es la
+confianza.
