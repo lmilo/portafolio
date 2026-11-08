@@ -20,7 +20,7 @@
 import type { SeccionLegal } from './legal'
 import { CORREO_LEGAL } from './legal'
 
-export const VIGENCIA_RECARGO = '30 de agosto de 2026'
+export const VIGENCIA_RECARGO = '8 de noviembre de 2026'
 export const CORREO_RECARGO = CORREO_LEGAL
 export const REPO_RECARGO = 'https://github.com/lmilo/recargo'
 
@@ -34,7 +34,7 @@ export const PRIVACIDAD_RECARGO: SeccionLegal[] = [
     destacado: true,
     parrafos: [
       'Tus turnos y tu sueldo no salen de este teléfono. No hay servidor, no hay cuenta, no hay analítica. Todo lo que escribes vive ahí y no sale, salvo cuando tú decides mandar un archivo por WhatsApp, correo o donde quieras.',
-      'La app sí muestra publicidad, y eso es lo único que se conecta a internet. Google necesita un identificador de tu celular para escoger qué anuncio mostrarte. Ese identificador no dice quién eres, no lleva tu nombre, y no viaja con nada de lo que tú escribiste: ni tus turnos, ni tu sueldo, ni el nombre de tu empresa.',
+      'La app sí muestra publicidad, y eso es lo único que se conecta a internet. Para escoger qué anuncio mostrarte, Google recibe un identificador de tu celular y algunos datos técnicos, como la región aproximada desde donde te conectas. Nada de eso dice quién eres, no lleva tu nombre, y no viaja con nada de lo que tú escribiste: ni tus turnos, ni tu sueldo, ni el nombre de tu empresa.',
       'Si desinstalas la app, se borra. Si pierdes el teléfono sin haber exportado un archivo, se pierde. Nadie más tiene una copia, ni el autor de la app.'
     ]
   },
@@ -58,7 +58,7 @@ export const PRIVACIDAD_RECARGO: SeccionLegal[] = [
     titulo: 'Qué NO hace la app',
     parrafos: [
       '- No manda tus datos a ningún servidor. No hay backend propio, no hay API, no hay sincronización entre teléfonos. Tus turnos y tu sueldo no llegan a ninguna parte.',
-      '- No usa analítica. Ni Google Analytics, ni Firebase, ni medición de uso: nadie sabe cuántas veces abres la app ni qué pantallas miras.',
+      '- No usa analítica. Ni Google Analytics, ni Firebase: quien hizo la app no mide cuántas veces la abres ni qué pantallas miras. Lo único que se mide es el anuncio, y eso lo hace Google (ver «La publicidad»).',
       '- No comparte datos con terceros. Ni con empleadores, ni con el autor de la app.',
       '- No manda los fallos automáticamente. El registro se queda quieto hasta que el usuario toque «Si algo se dañó, mandar el detalle».',
       '- No crea cuentas ni pide iniciar sesión.'
@@ -68,7 +68,7 @@ export const PRIVACIDAD_RECARGO: SeccionLegal[] = [
     titulo: 'La publicidad',
     parrafos: [
       'La app muestra un anuncio pequeño encima de la barra de navegación. Es lo que la sostiene: no cuesta nada, no tiene versión de pago y no vende datos de nadie.',
-      'Lo que Google recibe: el identificador de publicidad del celular —un número que Android le asigna al teléfono, no a la persona— más el tipo de dispositivo, el país y el idioma. Eso lo usa para escoger el anuncio.',
+      'Lo que Google recibe: el identificador de publicidad del celular —un número que Android le asigna al teléfono, no a la persona—; la dirección IP, de la que deduce la ciudad o la región aproximada, nunca la ubicación exacta; el tipo de dispositivo, el país y el idioma; si el anuncio se vio o se tocó, y datos técnicos de cómo funcionó, como cuánto tardó en cargar. Eso lo usa para escoger el anuncio, medir cómo le fue y detectar clics fraudulentos.',
       'Lo que Google NO recibe: turnos, sueldo, horas, notas, nombre, desprendibles ni compañeros. Nada de lo que se escribe en la app. La parte que calcula las horas y la parte que muestra el anuncio no se hablan entre ellas.',
       'Se puede controlar desde Android sin desinstalar nada:',
       '- Ajustes → Google → Anuncios → Restablecer el ID de publicidad: asigna un número nuevo y se pierde el historial anterior.',
@@ -95,8 +95,8 @@ export const PRIVACIDAD_RECARGO: SeccionLegal[] = [
     titulo: 'Sobre la Ley 1581 de 2012',
     parrafos: [
       'Los datos laborales —turnos, sueldo, desprendibles, compañeros— no se tratan en el sentido de la ley: no se recolectan, no salen del dispositivo, no existe base de datos que registrar ante la SIC, y el artículo 2 literal a) excluye las bases de uso personal o doméstico.',
-      'El identificador de publicidad sí es distinto, y hay que decirlo con claridad: es un dato que sale del teléfono y llega a Google. No identifica al usuario por su nombre, pero tampoco es anónimo del todo, y Google lo trata bajo sus propias políticas, no bajo esta. Se pueden consultar en policies.google.com/technologies/ads, y se puede cortar desde los ajustes de Android como se explica arriba.',
-      'La distinción importa y no es un tecnicismo: lo que la app promete proteger son los datos laborales, que son los que pueden costarle el puesto a alguien. Esa promesa se sostiene entera. El identificador de publicidad no dice dónde trabajas ni cuánto ganas.'
+      'Los datos de la publicidad sí son distintos, y hay que decirlo con claridad: el identificador de publicidad, la IP y lo que pasa con el anuncio salen del teléfono y llegan a Google. No identifican al usuario por su nombre, pero tampoco son anónimos del todo, y Google los trata bajo sus propias políticas, no bajo esta. Se pueden consultar en policies.google.com/technologies/ads, y el identificador se puede cortar desde los ajustes de Android como se explica arriba.',
+      'La distinción importa y no es un tecnicismo: lo que la app promete proteger son los datos laborales, que son los que pueden costarle el puesto a alguien. Esa promesa se sostiene entera. Nada de lo que recibe Google dice dónde trabajas ni cuánto ganas.'
     ]
   },
   {
